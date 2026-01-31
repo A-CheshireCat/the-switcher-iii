@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bhlq5ct1fdhk0"]
+
+[ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://world.gd" id="1_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://c3tfsxwfjkees" path="res://spike.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://c0ifcnu7dtv7k" path="res://assets/Actors/Player_Character.fbx" id="6_qfnet"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e5uuo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnsk1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
+
+[sub_resource type="Sky" id="Sky_rwgxs"]
+sky_material = SubResource("ProceduralSkyMaterial_nnsk1")
+
+[sub_resource type="Environment" id="Environment_4wyf3"]
+background_mode = 2
+sky = SubResource("Sky_rwgxs")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k0juu"]
+height = 0.3
+radius = 1.0
+
+[node name="World" type="Node3D" unique_id=627132778]
+script = ExtResource("1_4wyf3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=728125679]
+transform = Transform3D(30, 0, 0, 0, 0.9, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1585318583]
+mesh = SubResource("BoxMesh_e5uuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1381373473]
+shape = SubResource("BoxShape3D_nnsk1")
+
+[node name="Player" parent="." unique_id=336666563 instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.948645, 1.4549499, 4.8935547)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1972743673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9847727, 2.4984002, 8.57422)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1158637616]
+environment = SubResource("Environment_4wyf3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1177141336]
+transform = Transform3D(0.8983038, 0, -0.43937483, 0, 1, 0, 0.43937483, 0, 0.8983038, -8.180935, 4.10433, 5.5248365)
+light_energy = 1.634
+shadow_enabled = true
+
+[node name="Monster" parent="." unique_id=646365200 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4932275, 5.1935453)
+
+[node name="Player_Character" parent="." unique_id=268800292 instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7760572, 0.45022517, 7.4618597)
+
+[node name="Spike" parent="." unique_id=32948582 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 6.853, 2, 5.106)
+
+[node name="SpikeLauncher" type="Area3D" parent="." unique_id=1178328641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8697276, 1.7337029, 5.064924)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpikeLauncher" unique_id=733398018]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_k0juu")
+
+[node name="ResetButton" type="Button" parent="." unique_id=1612388330]
+offset_right = 98.0
+offset_bottom = 52.0
+text = "RESET"
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="body_entered" from="SpikeLauncher" to="Spike" method="_on_spike_launcher_body_entered"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
