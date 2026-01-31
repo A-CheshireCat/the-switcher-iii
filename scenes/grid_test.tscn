@@ -3,31 +3,27 @@
 [ext_resource type="MeshLibrary" uid="uid://bhnwvpr0gimbd" path="res://assets/ML1.meshlib" id="1_o2y7x"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="2_2ivm0"]
 
-[sub_resource type="Sky" id="Sky_o2y7x"]
-
-[sub_resource type="Environment" id="Environment_2ivm0"]
-background_mode = 2
-sky = SubResource("Sky_o2y7x")
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
+[sub_resource type="Environment" id="Environment_o2y7x"]
 
 [node name="Grid Test" type="Node3D" unique_id=2037526666]
 
-[node name="GridMap" type="GridMap" parent="." unique_id=314353011]
-mesh_library = ExtResource("1_o2y7x")
-data = {
-"cells": PackedInt32Array(-917503, 0, 18, -851969, 0, 0, -917504, 65535, 0, 65543, 2, 0, 65544, 2, 0, -131068, 0, 0, -393208, 0, 0, -393216, 4, 0, -393214, 0, 0, -851965, 0, 0, -786427, 0, 0)
-}
-metadata/_editor_floor_ = Vector3(0, -12, 0)
-
 [node name="Player" parent="." unique_id=336666563 instance=ExtResource("2_2ivm0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1760054, -22.342358, -0.06183255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1760054, 203.93268, 28.277634)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=135223333]
+transform = Transform3D(1, 0, 0, 0, 0.81622833, 0.5777295, 0, -0.5777295, 0.81622833, 3.1760054, -284.47394, -20.59459)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=292728008]
-environment = SubResource("Environment_2ivm0")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=135223333]
-transform = Transform3D(1, 0, 0, 0, 0.81622833, 0.5777295, 0, -0.5777295, 0.81622833, 0, -16.61499, 7.6830444)
+environment = SubResource("Environment_o2y7x")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=934365902]
 transform = Transform3D(1, 0, 0, 0, 0.9734432, 0.22892857, 0, -0.22892857, 0.9734432, 0, 0, 16.381134)
+light_energy = 8.172
+shadow_enabled = true
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1324819706]
+mesh_library = ExtResource("1_o2y7x")
+data = {
+"cells": PackedInt32Array(327678, 7, 1441801, 327679, 7, 1441797, 327677, 7, 1441793)
+}
+metadata/_editor_floor_ = Vector3(0, 5, 0)

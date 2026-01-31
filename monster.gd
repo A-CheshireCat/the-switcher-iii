@@ -29,3 +29,8 @@ func _physics_process(delta: float) -> void:
 		DISTANCE_TRAVELLED = 0
 		
 	move_and_slide()
+
+
+func _on_hurt_box_area_entered(area: Area3D) -> void:
+	# monster dies - add animations if available
+	queue_free()
