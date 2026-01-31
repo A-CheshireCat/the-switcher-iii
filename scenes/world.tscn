@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="ArrayMesh" uid="uid://ddkirguxmeeca" path="res://assets/Props/The_Cube.obj" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
+[ext_resource type="ArrayMesh" uid="uid://djcdl4sm11la6" path="res://assets/Props/The_Spikes.obj" id="3_qfnet"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e5uuo"]
 
@@ -28,6 +30,14 @@ mesh = SubResource("BoxMesh_e5uuo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1381373473]
 shape = SubResource("BoxShape3D_nnsk1")
+
+[node name="TheCube" type="MeshInstance3D" parent="StaticBody3D" unique_id=305184056]
+transform = Transform3D(0.033333335, 0, 0, 0, 1.1111112, 0, 0, 0, 0.033333335, 0.18221706, 0.49999982, 0.038005758)
+mesh = ExtResource("2_71j4m")
+
+[node name="TheSpikes" type="MeshInstance3D" parent="StaticBody3D" unique_id=343647631]
+transform = Transform3D(0.033333335, 0, 0, 0, 1.1111112, 0, 0, 0, 0.033333335, 0.17739601, 0.50000006, -0.0032892209)
+mesh = ExtResource("3_qfnet")
 
 [node name="Player" parent="." unique_id=336666563 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.948645, 1.4549499, 4.8935547)
