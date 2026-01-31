@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 const SPEED = 2.0
+#calculate thinking there are 60 ticks/sec
 var DISTANCE_DIRECTION_SWITCH = 150
 var DISTANCE_TRAVELLED = 0
 var DIRECTION_WAY = 1
@@ -27,5 +28,4 @@ func _physics_process(delta: float) -> void:
 		DIRECTION_WAY = 1
 		DISTANCE_TRAVELLED = 0
 		
-
 	move_and_slide()

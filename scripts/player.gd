@@ -3,6 +3,8 @@ extends CharacterBody3D
 const SPEED = 7.0
 const JUMP_VELOCITY = 9.5
 
+signal hit
+
 var mask1_active: bool = true
 var mask2_active: bool = false
 var mask3_active: bool = false
@@ -49,3 +51,10 @@ func change_mask(mask1: bool, mask2: bool, mask3: bool):
 	mask2_active = mask2
 	mask3_active = mask3
 	collision_mask2.disabled = not mask2
+
+func die():
+	hit.emit()
+	queue_free()
+
+func _on_mob_detector_body_entered(_body: Node3D) -> void:
+	die()

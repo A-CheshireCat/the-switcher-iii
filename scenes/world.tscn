@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bhlq5ct1fdhk0"]
 
+[ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
-[ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://monster.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e5uuo"]
 
@@ -17,6 +18,7 @@ background_mode = 2
 sky = SubResource("Sky_rwgxs")
 
 [node name="World" type="Node3D" unique_id=627132778]
+script = ExtResource("1_4wyf3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=728125679]
 transform = Transform3D(30, 0, 0, 0, 0.9, 0, 0, 0, 30, 0, 0, 0)
@@ -28,7 +30,7 @@ mesh = SubResource("BoxMesh_e5uuo")
 shape = SubResource("BoxShape3D_nnsk1")
 
 [node name="Player" parent="." unique_id=336666563 instance=ExtResource("1_nnsk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9847727, 1.4549499, 2.5857477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.948645, 1.4549499, 4.8935547)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1972743673]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9847727, 2.4984002, 8.57422)
@@ -43,3 +45,5 @@ shadow_enabled = true
 
 [node name="Monster" parent="." unique_id=646365200 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4932275, 5.1935453)
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
