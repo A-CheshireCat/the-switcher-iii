@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d1sgsytnnd781"]
+
+[ext_resource type="ArrayMesh" uid="uid://calyl160uoc1x" path="res://assets/Enviroment/Tileset/Cube_1_1.obj" id="1_fp1h0"]
+[ext_resource type="ArrayMesh" uid="uid://dr48m0qjws3cx" path="res://assets/Enviroment/Tileset/Platform_1_1.obj" id="2_jq0mb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekteq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jii8"]
+size = Vector3(1, 0.3, 1)
+
+[node name="Simple Mesh Library" type="Node3D" unique_id=335250747]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=313577335]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.4105225, 0, 0)
+mesh = ExtResource("1_fp1h0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=904050567]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1796310928]
+shape = SubResource("BoxShape3D_ekteq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1141578094]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+mesh = ExtResource("2_jq0mb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1199260506]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=273580314]
+transform = Transform3D(0.9999704, 0, 4.725109e-13, 0, 1, 0, -4.725109e-13, 0, 0.9999704, 0, 0.35, 0)
+shape = SubResource("BoxShape3D_8jii8")
