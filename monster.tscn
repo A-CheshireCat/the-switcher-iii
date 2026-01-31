@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://1gmc0sac64ja"]
+
+[ext_resource type="Script" uid="uid://b4y1fqc3g7teo" path="res://monster.gd" id="1_s3gyj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mrqeg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ga5te"]
+
+[node name="Monster" type="CharacterBody3D" unique_id=646365200]
+script = ExtResource("1_s3gyj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1663755421]
+shape = SubResource("SphereShape3D_mrqeg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2043374184]
+mesh = SubResource("SphereMesh_ga5te")
