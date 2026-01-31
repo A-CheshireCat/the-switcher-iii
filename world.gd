@@ -11,3 +11,7 @@ func _process(_delta: float) -> void:
 	pass
 func _on_player_hit():
 	print("Ai crapat ba!")
+
+
+func _on_reset_button_pressed() -> void:
+	get_tree().reload_current_scene()
