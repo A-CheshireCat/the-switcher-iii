@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp56kk1b8t65u"]
+[gd_scene load_steps=6 format=3 uid="uid://bp56kk1b8t65u"]
 
 [ext_resource type="Script" uid="uid://c4k87ibgo00mc" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="PackedScene" uid="uid://dp0k2lw2vrlew" path="res://assets/Animations/Player_Character.fbx" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://psesseg1jgx5" path="res://scenes/Player_Anim_Test.tscn" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
-
-[sub_resource type="Skin" id="Skin_qhqgy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vyb7"]
 size = Vector3(0.730469, 0.226074, 0.762695)
@@ -18,12 +16,8 @@ script = ExtResource("1_3vyb7")
 [node name="PlayerCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_g2els")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="PlayerCollision"]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, -1, 0)
-skin = SubResource("Skin_qhqgy")
-
 [node name="Player_Character" parent="PlayerCollision" instance=ExtResource("2_g2els")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0838466, -1.04323, -0.104789)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.998429, 0)
 
 [node name="HitAreaMask2" type="Area3D" parent="."]
 collision_layer = 2

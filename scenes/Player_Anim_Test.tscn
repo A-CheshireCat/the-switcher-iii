@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://psesseg1jgx5"]
+
+[ext_resource type="PackedScene" uid="uid://cmlw2kj2omc1p" path="res://assets/Actors/Player_Character.fbx" id="1_h744p"]
+[ext_resource type="AnimationLibrary" uid="uid://o60v4lcm0xtw" path="res://assets/Animations/Retargeted/Player_Local.res" id="2_6656o"]
+
+[node name="Player_Character" instance=ExtResource("1_h744p")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0152393, 0)
+
+[node name="Skeleton" parent="Armature" index="0"]
+bones/0/position = Vector3(0.000772566, 0.994746, -0.000757024)
+bones/0/rotation = Quaternion(-0.0081017, -0.00776218, -0.0117575, 0.999868)
+bones/1/rotation = Quaternion(0.0093371, -0.00190897, -0.0147418, 0.999846)
+bones/2/rotation = Quaternion(-0.0335235, 0.00061434, -0.000890581, 0.999437)
+bones/3/rotation = Quaternion(-0.033523, 0.000662465, -0.00090704, 0.999437)
+bones/4/rotation = Quaternion(-0.0234346, -0.00266437, -0.00376827, 0.999715)
+bones/5/rotation = Quaternion(-0.0671946, -0.0499876, -0.0791349, 0.99334)
+bones/8/rotation = Quaternion(0.58426, 0.380651, 0.568964, -0.435918)
+bones/9/rotation = Quaternion(0.0760224, 0.862123, -0.469312, -0.175243)
+bones/10/rotation = Quaternion(0.0543818, -0.705013, 0.0543818, 0.705013)
+bones/11/rotation = Quaternion(0.0221145, 0.708679, 0.00227167, 0.70518)
+bones/37/rotation = Quaternion(0.56584, -0.40736, -0.544344, -0.466447)
+bones/38/rotation = Quaternion(0.0586502, 0.826292, -0.560179, 0.000502586)
+bones/39/rotation = Quaternion(0.0885714, 0.701538, -0.0885715, 0.701538)
+bones/40/rotation = Quaternion(0.0940292, -0.77089, -0.0843528, 0.624317)
+bones/66/rotation = Quaternion(0.0670643, 0.0498178, 0.995906, -0.0345348)
+bones/67/rotation = Quaternion(-0.0208728, 0.988625, -0.147947, 0.0172156)
+bones/68/rotation = Quaternion(-0.0397239, 0.649623, -0.757965, 0.043594)
+bones/69/rotation = Quaternion(2.04149e-08, 1, -8.9407e-08, -1.38294e-08)
+bones/72/rotation = Quaternion(-0.0971588, 0.00297508, 0.994328, 0.0431655)
+bones/73/rotation = Quaternion(0.0204734, 0.994442, -0.0865031, -0.0564241)
+bones/74/rotation = Quaternion(0.0505959, 0.678707, -0.730533, -0.0558397)
+bones/75/rotation = Quaternion(-5.63086e-08, 1, 0.000117123, -0.000177678)
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"Player_Local": ExtResource("2_6656o")
+}
+autoplay = "Player_Local/happy_idle"
