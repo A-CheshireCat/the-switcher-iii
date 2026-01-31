@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bhlq5ct1fdhk0"]
 
-[ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://scenes/world.gd" id="1_4wyf3"]
+[ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://c3tfsxwfjkees" path="res://spike.tscn" id="4_k0juu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e5uuo"]
 
@@ -45,5 +46,8 @@ shadow_enabled = true
 
 [node name="Monster" parent="." unique_id=646365200 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4932275, 5.1935453)
+
+[node name="Spike" parent="." unique_id=32948582 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 6.8526545, 2.692606, 5.105642)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

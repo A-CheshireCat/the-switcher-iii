@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c3tfsxwfjkees"]
+
+[ext_resource type="Script" uid="uid://od8ae28fcy4j" path="res://spike.gd" id="1_8ryga"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pe76i"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8ryga"]
+
+[node name="Spike" type="RigidBody3D" unique_id=32948582]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 2
+script = ExtResource("1_8ryga")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1195736268]
+shape = SubResource("CylinderShape3D_pe76i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=733474992]
+mesh = SubResource("CylinderMesh_8ryga")
