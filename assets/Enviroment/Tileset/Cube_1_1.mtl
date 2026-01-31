@@ -1,0 +1,16 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Level_Tex_01_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.368627 0.337255 0.313725
+Ks 0.330000 0.330000 0.330000
+map_Kd Cube_1_1/Level_Tex_01_1.png
+
+newmtl Level_Tex_01
+Ka 0.000000 0.000000 0.000000
+Kd 0.250980 0.247059 0.207843
+Ks 0.330000 0.330000 0.330000
+map_Kd Cube_1_1/Level_Tex_01.png
+

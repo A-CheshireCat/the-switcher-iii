@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c3tfsxwfjkees"]
+[gd_scene load_steps=0 format=3 uid="uid://c3tfsxwfjkees"]
 
-[ext_resource type="Script" uid="uid://od8ae28fcy4j" path="res://spike.gd" id="1_8ryga"]
+[ext_resource type="Script" uid="uid://od8ae28fcy4j" path="res://scripts/spike.gd" id="1_8ryga"]
 [ext_resource type="ArrayMesh" uid="uid://djcdl4sm11la6" path="res://assets/Props/The_Spikes.obj" id="2_7k7bx"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pe76i"]

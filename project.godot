@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="The Switcher III"
-run/main_scene="uid://dreibxc8ivnn8"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://b81w5tp2lnlfg"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [input]
