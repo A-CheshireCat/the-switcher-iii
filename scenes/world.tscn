@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c3tfsxwfjkees" path="res://spike.tscn" id="4_k0juu"]
+[ext_resource type="Texture2D" uid="uid://0ojndkwyknny" path="res://assets/Enviroment/Parallax_Plane_City/Projection_Texture.png" id="6_4mrxx"]
+[ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://c0ifcnu7dtv7k" path="res://assets/Actors/Player_Character.fbx" id="6_qfnet"]
+[ext_resource type="ArrayMesh" uid="uid://c0eg8ty8uwl4w" path="res://assets/Enviroment/Parallax_Plane_Mountains.obj" id="7_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://cwjgrjx5h8uq" path="res://assets/Enviroment/Parallax_Plane_Mountains/Projection_Texture_02.png" id="8_7r4gi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e5uuo"]
 
@@ -22,6 +26,17 @@ sky = SubResource("Sky_rwgxs")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_k0juu"]
 height = 0.3
 radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r4gi"]
+transparency = 1
+depth_draw_mode = 1
+diffuse_mode = 1
+albedo_texture = ExtResource("6_4mrxx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
+transparency = 1
+diffuse_mode = 1
+albedo_texture = ExtResource("8_7r4gi")
 
 [node name="World" type="Node3D" unique_id=627132778]
 script = ExtResource("1_4wyf3")
@@ -45,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9847727, 2.4984002, 8.57422
 environment = SubResource("Environment_4wyf3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1177141336]
-transform = Transform3D(0.8983038, 0, -0.43937483, 0, 1, 0, 0.43937483, 0, 0.8983038, -8.180935, 4.10433, 5.5248365)
+transform = Transform3D(-0.0686422, 0, 0.9976414, 0, 1, 0, -0.9976414, 0, -0.0686422, -8.180935, 4.10433, 5.5248365)
 light_energy = 1.634
 shadow_enabled = true
 
@@ -70,6 +85,15 @@ shape = SubResource("CylinderShape3D_k0juu")
 offset_right = 98.0
 offset_bottom = 52.0
 text = "RESET"
+
+[node name="ParallaxPlaneCity" type="MeshInstance3D" parent="." unique_id=713613937]
+material_override = SubResource("StandardMaterial3D_7r4gi")
+mesh = ExtResource("6_i7141")
+
+[node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="." unique_id=278889613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+material_override = SubResource("StandardMaterial3D_w7kh3")
+mesh = ExtResource("7_4mrxx")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="body_entered" from="SpikeLauncher" to="Spike" method="_on_spike_launcher_body_entered"]

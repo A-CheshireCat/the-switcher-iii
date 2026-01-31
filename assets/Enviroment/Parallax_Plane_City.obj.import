@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://m446sdw524w"
+path="res://.godot/imported/Parallax_Plane_City.obj-d218c7a1d97293bc4bd49b4042133177.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Parallax_Plane_City.obj-d218c7a1d97293bc4bd49b4042133177.mesh"]
+
+source_file="res://assets/Enviroment/Parallax_Plane_City.obj"
+dest_files=["res://.godot/imported/Parallax_Plane_City.obj-d218c7a1d97293bc4bd49b4042133177.mesh", "res://.godot/imported/Parallax_Plane_City.obj-d218c7a1d97293bc4bd49b4042133177.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
