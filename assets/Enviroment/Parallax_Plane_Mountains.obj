@@ -1,0 +1,20 @@
+# Alias OBJ Model File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+# File units = meters
+
+mtllib Parallax_Plane_Mountains.mtl
+
+g Mesh1 Group1 Model
+
+usemtl Projection_Texture_02
+v 0 0 -666
+vt 0.99931 0.00757142
+vn 1 0 -0
+v 0 60 -666
+vt 0.99931 0.991973
+v 0 60 -0
+vt 0.00068982 0.991973
+v 0 0 -0
+vt 0.00068982 0.00757142
+f 1/1/1 2/2/1 3/3/1 4/4/1 
+
