@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://das8sjmy7y3a3"]
+[gd_scene load_steps=0 format=3 uid="uid://das8sjmy7y3a3"]
 
 [ext_resource type="Script" path="res://spike.gd" id="1_8ryga"]
 [ext_resource type="ArrayMesh" uid="uid://djcdl4sm11la6" path="res://assets/Props/The_Spikes.obj" id="2_7k7bx"]

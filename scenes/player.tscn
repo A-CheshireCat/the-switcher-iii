@@ -1,39 +1,44 @@
-[gd_scene format=3 uid="uid://bp56kk1b8t65u"]
+[gd_scene load_steps=7 format=3 uid="uid://bp56kk1b8t65u"]
 
 [ext_resource type="Script" uid="uid://c4k87ibgo00mc" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://dp0k2lw2vrlew" path="res://assets/Animations/Player_Character.fbx" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qhqgy"]
+[sub_resource type="Skin" id="Skin_qhqgy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vyb7"]
-size = Vector3(0.73046875, 0.22607422, 0.7626953)
+size = Vector3(0.730469, 0.226074, 0.762695)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
 
-[node name="Player" type="CharacterBody3D" unique_id=336666563]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
 
-[node name="PlayerCollision" type="CollisionShape3D" parent="." unique_id=265462567]
+[node name="PlayerCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_g2els")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1210770169]
-mesh = SubResource("CapsuleMesh_qhqgy")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PlayerCollision"]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, -1, 0)
+skin = SubResource("Skin_qhqgy")
 
-[node name="HitAreaMask2" type="Area3D" parent="." unique_id=2122463935]
+[node name="Player_Character" parent="PlayerCollision" instance=ExtResource("2_g2els")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0838466, -1.04323, -0.104789)
+
+[node name="HitAreaMask2" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HitAreaMask2" unique_id=25274459]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1060061, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitAreaMask2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.10601, 0)
 shape = SubResource("BoxShape3D_3vyb7")
 disabled = true
 
-[node name="MobDetector" type="Area3D" parent="." unique_id=1016737062]
+[node name="MobDetector" type="Area3D" parent="."]
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector" unique_id=1289177828]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
 shape = SubResource("CapsuleShape3D_3vyb7")
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]

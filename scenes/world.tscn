@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhlq5ct1fdhk0"]
+[gd_scene load_steps=18 format=3 uid="uid://bhlq5ct1fdhk0"]
 
 [ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://scripts/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c3tfsxwfjkees" path="res://scenes/spike.tscn" id="4_k0juu"]
 [ext_resource type="Texture2D" uid="uid://0ojndkwyknny" path="res://assets/Enviroment/Parallax_Plane_City/Projection_Texture.png" id="6_4mrxx"]
 [ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="6_i7141"]
-[ext_resource type="PackedScene" uid="uid://c0ifcnu7dtv7k" path="res://assets/Actors/Player_Character.fbx" id="6_qfnet"]
 [ext_resource type="ArrayMesh" uid="uid://c0eg8ty8uwl4w" path="res://assets/Enviroment/Parallax_Plane_Mountains.obj" id="7_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://cwjgrjx5h8uq" path="res://assets/Enviroment/Parallax_Plane_Mountains/Projection_Texture_02.png" id="8_7r4gi"]
 [ext_resource type="MeshLibrary" uid="uid://bhnwvpr0gimbd" path="res://assets/ML1.meshlib" id="10_w7kh3"]
@@ -67,9 +66,6 @@ shadow_enabled = true
 
 [node name="Monster" parent="." instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49323, 5.19355)
-
-[node name="Player_Character" parent="." instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77606, 0.450225, 7.46186)
 
 [node name="Spike" parent="." instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.853, 2, 5.106)

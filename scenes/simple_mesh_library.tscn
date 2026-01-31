@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d1sgsytnnd781"]
+[gd_scene load_steps=0 format=3 uid="uid://d1sgsytnnd781"]
 
 [ext_resource type="ArrayMesh" uid="uid://calyl160uoc1x" path="res://assets/Enviroment/Tileset/Cube_1_1.obj" id="1_fp1h0"]
 [ext_resource type="ArrayMesh" uid="uid://dr48m0qjws3cx" path="res://assets/Enviroment/Tileset/Platform_1_1.obj" id="2_jq0mb"]
