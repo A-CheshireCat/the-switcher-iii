@@ -5,6 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ddkirguxmeeca" path="res://assets/Props/The_Cube.obj" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
 [ext_resource type="ArrayMesh" uid="uid://djcdl4sm11la6" path="res://assets/Props/The_Spikes.obj" id="3_qfnet"]
+[ext_resource type="PackedScene" uid="uid://c0ifcnu7dtv7k" path="res://assets/Actors/Player_Character.fbx" id="6_qfnet"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e5uuo"]
 
@@ -55,5 +56,8 @@ shadow_enabled = true
 
 [node name="Monster" parent="." unique_id=646365200 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4932275, 5.1935453)
+
+[node name="Player_Character" parent="." unique_id=268800292 instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7760572, 0.45022517, 7.4618597)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
