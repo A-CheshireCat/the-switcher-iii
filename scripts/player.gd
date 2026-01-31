@@ -46,6 +46,8 @@ func _physics_process(delta: float) -> void:
 
 func change_mask(mask1: bool, mask2: bool, mask3: bool):
 	mask1_active = mask1
+	double_jump_active = mask1
 	mask2_active = mask2
-	mask3_active = mask3
 	collision_mask2.disabled = not mask2
+	mask3_active = mask3
+	
