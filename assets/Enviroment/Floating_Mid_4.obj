@@ -1,0 +1,35 @@
+# Alias OBJ Model File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+# File units = meters
+
+mtllib Floating_Mid_4.mtl
+
+g Mesh1 Block_4_4_2_1 Model
+
+usemtl FrontColor
+v -3 2 -4
+vt 0 157.48
+vn 0 1 -0
+v -3 2 -0
+vt 0 0
+v 0 2 -0
+vt 118.11 0
+v 0 2 -4
+vt 118.11 157.48
+f 1/1/1 2/2/1 3/3/1 4/4/1 
+
+v 0 0 -0
+vn 1 0 -0
+v 0 0 -4
+vt 157.48 0
+vt 157.48 78.7402
+vt 0 78.7402
+f 5/2/2 6/5/2 4/6/2 3/7/2 
+
+v -3 0 -4
+vn 0 -1 -0
+vt -118.11 157.48
+vt -118.11 0
+v -3 0 -0
+f 7/1/3 6/8/3 5/9/3 8/2/3 
+
