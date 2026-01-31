@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dreibxc8ivnn8"]
+
+[ext_resource type="Script" uid="uid://xsr6oamperat" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Node2D" unique_id=1343947391]
+script = ExtResource("1_06t4h")
+
+[node name="StartButton" type="Button" parent="." unique_id=1170899999]
+offset_left = 451.0
+offset_top = 108.0
+offset_right = 568.0
+offset_bottom = 186.0
+text = "SART"
+
+[node name="Quit" type="Button" parent="." unique_id=1089128620]
+offset_left = 448.0
+offset_top = 305.0
+offset_right = 569.0
+offset_bottom = 369.0
+text = "QUIT GAME"
+
+[connection signal="button_down" from="StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="Quit" to="." method="_on_quit_button_down"]
