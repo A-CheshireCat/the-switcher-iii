@@ -62,5 +62,11 @@ monitorable = false
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_k0juu")
 
+[node name="ResetButton" type="Button" parent="." unique_id=1612388330]
+offset_right = 98.0
+offset_bottom = 52.0
+text = "RESET"
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="body_entered" from="SpikeLauncher" to="Spike" method="_on_spike_launcher_body_entered"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
