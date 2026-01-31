@@ -6,8 +6,9 @@ const JUMP_VELOCITY = 9.5
 var mask1_active: bool = true
 var mask2_active: bool = false
 var mask3_active: bool = false
-
 var double_jump_active: bool = false
+
+@onready var collision_mask2: CollisionShape3D = $HitAreaMask2/CollisionShape3D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,17 +27,11 @@ func _physics_process(delta: float) -> void:
 
 	# Handle mask switch
 	if Input.is_action_just_pressed("mask1"):
-		mask1_active = true
-		mask2_active = false
-		mask3_active = false
+		change_mask(true,false,false)
 	if Input.is_action_just_pressed("mask2"):
-		mask1_active = false
-		mask2_active = true
-		mask3_active = false
+		change_mask(false,true,false)
 	if Input.is_action_just_pressed("mask3"):
-		mask1_active = false
-		mask2_active = false
-		mask3_active = true
+		change_mask(false,false,true)
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -48,3 +43,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func change_mask(mask1: bool, mask2: bool, mask3: bool):
+	mask1_active = mask1
+	mask2_active = mask2
+	mask3_active = mask3
+	collision_mask2.disabled = not mask2
