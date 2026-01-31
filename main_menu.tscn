@@ -1,23 +1,44 @@
 [gd_scene format=3 uid="uid://dreibxc8ivnn8"]
 
 [ext_resource type="Script" uid="uid://xsr6oamperat" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://l71jtwvyffgh" path="res://assets/UI/Title_Screen.jpg" id="2_7vrkn"]
 
 [node name="MainMenu" type="Node2D" unique_id=1343947391]
 script = ExtResource("1_06t4h")
 
-[node name="StartButton" type="Button" parent="." unique_id=1170899999]
-offset_left = 451.0
-offset_top = 108.0
-offset_right = 568.0
-offset_bottom = 186.0
-text = "SART"
+[node name="Control" type="Control" parent="." unique_id=1210483199]
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Quit" type="Button" parent="." unique_id=1089128620]
-offset_left = 448.0
-offset_top = 305.0
-offset_right = 569.0
-offset_bottom = 369.0
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1310945567]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_7vrkn")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1481451008]
+offset_left = 512.0
+offset_top = 400.0
+offset_right = 712.0
+offset_bottom = 604.0
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1170899999]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "START"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1089128620]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
 text = "QUIT GAME"
 
-[connection signal="button_down" from="StartButton" to="." method="_on_start_button_button_down"]
-[connection signal="button_down" from="Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]
