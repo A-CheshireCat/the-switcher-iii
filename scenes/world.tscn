@@ -49,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9847727, 2.4984002, 8.57422
 environment = SubResource("Environment_4wyf3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1177141336]
-transform = Transform3D(0.8983038, 0, -0.43937483, 0, 1, 0, 0.43937483, 0, 0.8983038, -8.180935, 4.10433, 5.5248365)
+transform = Transform3D(0.76883143, 0.51719075, -0.37604782, -0.46459442, 0.8558702, 0.2272406, 0.43937483, 0, 0.8983038, -8.180935, 4.10433, 5.5248365)
 light_energy = 1.634
 shadow_enabled = true
 
