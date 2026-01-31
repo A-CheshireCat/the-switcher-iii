@@ -52,7 +52,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4932275, 5.1935453)
 
 [node name="Spike" parent="." unique_id=32948582 instance=ExtResource("4_k0juu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 6.8526545, 2.692606, 5.105642)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 6.853, 2, 5.106)
 
 [node name="SpikeLauncher" type="Area3D" parent="." unique_id=1178328641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8697276, 1.7337029, 5.064924)
