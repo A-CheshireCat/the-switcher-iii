@@ -228,6 +228,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -1)
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1624505576]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 4, 7)
 
+
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player" unique_id=276284203]
+transform = Transform3D(0.7485855, 0.33151916, -0.57420796, -0.076770976, 0.9035387, 0.42157325, 0.6585787, -0.27150112, 0.70182705, 0, 5, 7)
+light_energy = 3.0
+
+
 [node name="Control" type="Control" parent="." unique_id=673890646]
 layout_mode = 3
 anchors_preset = 0
