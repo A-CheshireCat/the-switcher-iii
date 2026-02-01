@@ -2,14 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c4k87ibgo00mc" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://psesseg1jgx5" path="res://scenes/Player_Anim_Test.tscn" id="2_g2els"]
-[ext_resource type="Script" path="res://scripts/player_anim_tree.gd" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
+radius = 0.1772461
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vyb7"]
-size = Vector3(0.730469, 0.226074, 0.762695)
+size = Vector3(0.40600586, 0.226074, 0.38867188)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+radius = 0.203125
+height = 1.9458008
 
 [node name="Player" type="CharacterBody3D" unique_id=1327306059]
 script = ExtResource("1_3vyb7")
@@ -20,7 +22,34 @@ shape = SubResource("CapsuleShape3D_g2els")
 
 [node name="Player_Character" parent="PlayerCollision" unique_id=826891210 instance=ExtResource("2_g2els")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5543072e-09, -0.9137282, -0.058435738)
-script = ExtResource("3_qhqgy")
+
+[node name="Skeleton" parent="PlayerCollision/Player_Character/Armature" parent_id_path=PackedInt32Array(826891210, 86265208) index="0" unique_id=406495869]
+bones/0/position = Vector3(-0.0005025073, 1.0114617, 0.017235912)
+bones/0/rotation = Quaternion(-0.013572933, 0.07784843, -0.010774494, 0.99681467)
+bones/1/rotation = Quaternion(0.026482122, 0.033988263, -0.023134006, 0.99880344)
+bones/2/rotation = Quaternion(-0.030132852, 0.010639471, -0.0034419314, 0.99948347)
+bones/3/rotation = Quaternion(-0.030169668, 0.010686028, -0.0034914701, 0.9994816)
+bones/4/rotation = Quaternion(-0.031493563, -0.012881615, 0.0092911385, 0.9993777)
+bones/5/rotation = Quaternion(-0.10721149, -0.12038899, 0.03874064, 0.9861599)
+bones/8/rotation = Quaternion(0.58998364, 0.37853342, 0.5492584, -0.45491427)
+bones/9/rotation = Quaternion(0.0044927127, 0.8588751, -0.5118217, -0.018762285)
+bones/10/rotation = Quaternion(0.0515896, -0.7052223, 0.051589616, 0.7052223)
+bones/11/rotation = Quaternion(-0.061433233, 0.5883493, 0.19616541, 0.7820424)
+bones/37/rotation = Quaternion(0.5483295, -0.4281367, -0.547863, -0.46462882)
+bones/38/rotation = Quaternion(0.15448146, 0.79373986, -0.5882382, 0.009406588)
+bones/39/rotation = Quaternion(0.1182317, 0.6971523, -0.11823137, 0.6971523)
+bones/40/rotation = Quaternion(-0.014762675, -0.7424014, -0.13070023, 0.6569167)
+bones/66/rotation = Quaternion(0.0631124, 0.069382995, 0.9952546, -0.02590779)
+bones/67/rotation = Quaternion(-0.03428162, 0.9831936, -0.16617814, -0.06737908)
+bones/68/rotation = Quaternion(-0.049000397, 0.7064255, -0.7036255, 0.05893448)
+bones/69/rotation = Quaternion(-0.0009427845, 0.9964942, 0.08181247, -0.017470622)
+bones/72/rotation = Quaternion(-0.10899581, -0.006059373, 0.9931516, 0.041630402)
+bones/73/rotation = Quaternion(0.02791689, 0.9908669, -0.107264854, -0.0767969)
+bones/74/rotation = Quaternion(0.03909804, 0.73292285, -0.66915077, -0.1163304)
+bones/75/rotation = Quaternion(-0.0006337459, 0.992691, 0.12001988, 0.012626419)
+
+[node name="BoneAttachment3D2" parent="PlayerCollision/Player_Character/Armature/Skeleton" index="1" unique_id=1253815460]
+transform = Transform3D(0.9968179, -0.079708464, 0.00084254146, 0.07413848, 0.9309404, 0.357566, -0.029285371, -0.35636574, 0.93388754, 0.031295143, 1.6160578, -0.026593832)
 
 [node name="HitAreaMask2" type="Area3D" parent="." unique_id=635542422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.94176716, 0)
@@ -28,7 +57,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitAreaMask2" unique_id=1275848833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.10601, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029907227, -0.09136504, 0)
 shape = SubResource("BoxShape3D_3vyb7")
 disabled = true
 
@@ -37,6 +66,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector" unique_id=926085408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02709961, 0)
 shape = SubResource("CapsuleShape3D_3vyb7")
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
