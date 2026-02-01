@@ -22,7 +22,7 @@ sky = SubResource("Sky_rwgxs")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ouyv"]
 
-[node name="TrainingLevel" type="Node" unique_id=700140822]
+[node name="Second_Level" type="Node" unique_id=700140822]
 script = ExtResource("1_rse2e")
 
 [node name="World" type="Node3D" parent="." unique_id=1905439584]
@@ -200,6 +200,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.92853, 18.44317, -1)
 [node name="Monster2" parent="World/FirstMob5" unique_id=1835403223 instance=ExtResource("5_44p27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.18564, 2.3028522, -1)
 
+[node name="RigidBody3D" type="RigidBody3D" parent="World" unique_id=1296830417]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/RigidBody3D" unique_id=1352124478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.27829, 4.4467325, -1.8288221)
+shape = SubResource("BoxShape3D_1ouyv")
+
+[node name="TheCube3" type="MeshInstance3D" parent="World/RigidBody3D" unique_id=891263887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.793884, 3.9820442, -1.3129358)
+mesh = ExtResource("4_gxtgb")
+skeleton = NodePath("")
+
 [node name="Player" parent="." unique_id=336666563 instance=ExtResource("6_enfa2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -1)
 
@@ -235,21 +246,5 @@ gi_mode = 2
 gi_lightmap_texel_scale = 0.2
 mesh = ExtResource("9_muq2n")
 surface_material_override/0 = ExtResource("10_ndeph")
-
-[node name="TheCube3" type="MeshInstance3D" parent="." unique_id=97059534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.896942, 1.9910221, -0.6564679)
-mesh = ExtResource("4_gxtgb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TheCube3" unique_id=1118419596]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5155945, 0.4646883, -0.5158863)
-shape = SubResource("BoxShape3D_1ouyv")
-
-[node name="TheCube3" type="MeshInstance3D" parent="TheCube3" unique_id=891263887]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.896942, 1.9910221, -0.6564679)
-mesh = ExtResource("4_gxtgb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TheCube3/TheCube3" unique_id=1352124478]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5155945, 0.4646883, -0.5158863)
-shape = SubResource("BoxShape3D_1ouyv")
 
 [connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]
