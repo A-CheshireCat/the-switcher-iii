@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xsr6oamperat" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://l71jtwvyffgh" path="res://assets/UI/Title_Screen.jpg" id="2_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://dculxqdgg3eui" path="res://assets/Audio/Music/Tri_Tachyon_Intro_Riser.mp3" id="3_bqqt6"]
 
 [node name="MainMenu" type="Node2D" unique_id=705226692]
 script = ExtResource("1_ekxnf")
@@ -39,6 +40,11 @@ text = "START"
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "QUIT GAME"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=648890448]
+stream = ExtResource("3_bqqt6")
+autoplay = true
+bus = &"Music"
 
 [connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]
