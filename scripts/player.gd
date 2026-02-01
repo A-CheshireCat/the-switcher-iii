@@ -66,5 +66,5 @@ func _on_mob_detector_body_entered(_body: Node3D) -> void:
 	
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(_body: Node3D) -> void:
 	$SpikeOfDoom
