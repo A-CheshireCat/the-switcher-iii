@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dxtgrcfpv2k6f"]
+
+[ext_resource type="Texture2D" uid="uid://dtviuj7302uy4" path="res://assets/Enviroment/Tileset/Cube_1_1/Level_Tex_01_1.png" id="1_qso4w"]
+
+[resource]
+albedo_texture = ExtResource("1_qso4w")
