@@ -7,14 +7,17 @@ signal hit
 
 var mask1_active: bool = true
 var mask2_active: bool = false
-var mask3_active: bool = false
 var double_jump_active: bool = false
 
 @onready var collision_mask2: CollisionShape3D = $HitAreaMask2/CollisionShape3D
 @onready var animation_tree: AnimationTree = $PlayerCollision/Player_Character/AnimationTree
 
+@onready var mask_01_movement: Node3D = $PlayerCollision/Player_Character/Armature/Skeleton/BoneAttachment3D2/Mask_01_Movement
+@onready var mask_02_combat: Node3D = $PlayerCollision/Player_Character/Armature/Skeleton/BoneAttachment3D2/Mask_02_Combat
+
 func _ready() -> void:
 	animation_tree.active = true
+	mask_02_combat.visible = false
 
 func _process(delta: float) -> void:
 	update_animations()
@@ -54,9 +57,10 @@ func _physics_process(delta: float) -> void:
 func change_mask(mask1: bool, mask2: bool):
 	mask1_active = mask1
 	double_jump_active = mask1
+	mask_01_movement.visible = mask1
 	mask2_active = mask2
 	collision_mask2.disabled = not mask2
-
+	mask_02_combat.visible = mask2
 
 func die():
 	hit.emit()
