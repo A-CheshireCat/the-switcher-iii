@@ -13,3 +13,10 @@ func _process(_delta: float) -> void:
 
 func _on_button_button_down() -> void:
 	get_tree().reload_current_scene()
+
+func _on_area_3d_area_entered(_area: Area3D) -> void:
+	get_tree().change_scene_to_file("res://win_screen.tscn")
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	get_tree().change_scene_to_file("res://win_screen.tscn")

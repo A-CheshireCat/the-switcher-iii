@@ -31,6 +31,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hurt_box_area_entered(area: Area3D) -> void:
+func _on_hurt_box_area_entered(_area: Area3D) -> void:
 	# monster dies - add animations if available
 	queue_free()

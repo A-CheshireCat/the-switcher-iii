@@ -62,10 +62,3 @@ func die():
 
 func _on_mob_detector_body_entered(_body: Node3D) -> void:
 	die()
-
-	
-	
-
-
-func _on_area_3d_body_entered(_body: Node3D) -> void:
-	$SpikeOfDoom
