@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b6cy0tulg5541"]
+
+[ext_resource type="PackedScene" uid="uid://dkvvqhtf0l6m3" path="res://assets/Actors/The_Blob.fbx" id="1_bsw03"]
+
+[node name="The_Blob" unique_id=281558065 instance=ExtResource("1_bsw03")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1471900910) index="0" unique_id=1169883081]
+bones/1/rotation = Quaternion(-0.060730156, 1.3032635e-05, -8.19522e-05, 0.9981542)
+bones/9/rotation = Quaternion(-0.45029232, -0.5496473, 0.54466885, -0.4454891)
+bones/10/rotation = Quaternion(-0.078770556, -0.0076380726, 0.10565966, 0.99124825)
+bones/11/rotation = Quaternion(0.06979367, 4.0900073e-08, 0.010518294, 0.997506)
+bones/13/rotation = Quaternion(0.45032674, -0.5496229, 0.5447075, 0.4454374)
+bones/14/rotation = Quaternion(-0.07858417, 0.007664889, -0.10705915, 0.9911126)
+bones/15/rotation = Quaternion(0.06925204, -1.0525845e-07, -0.0075308573, 0.9975709)
+
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Armature/Skeleton3D" index="1" unique_id=2039165170]
+transform = Transform3D(1, 0, 0, 0, 1, -7.5497894e-08, 0, 7.5497894e-08, 1, 0, -0.015239278, -1.1505333e-09)
+active = false

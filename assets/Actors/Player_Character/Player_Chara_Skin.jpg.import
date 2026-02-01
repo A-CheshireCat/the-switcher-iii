@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf422ufdwrtvn"
-path.s3tc="res://.godot/imported/Mask_02_Texx.png-6c43dc1d8998b14108ef9b394b81ff2a.s3tc.ctex"
+uid="uid://bnikr8vrw5xjj"
+path.s3tc="res://.godot/imported/Player_Chara_Skin.jpg-5b992cba4fb29a31e173b14c8dfe5f34.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Actors/Mask_02_Texx.png"
-dest_files=["res://.godot/imported/Mask_02_Texx.png-6c43dc1d8998b14108ef9b394b81ff2a.s3tc.ctex"]
+source_file="res://assets/Actors/Player_Character/Player_Chara_Skin.jpg"
+dest_files=["res://.godot/imported/Player_Chara_Skin.jpg-5b992cba4fb29a31e173b14c8dfe5f34.s3tc.ctex"]
 
 [params]
 

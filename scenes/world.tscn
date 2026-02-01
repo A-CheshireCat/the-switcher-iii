@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhlq5ct1fdhk0"]
+[gd_scene format=3 uid="uid://bhlq5ct1fdhk0"]
 
 [ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://scripts/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://das8sjmy7y3a3" path="res://scenes/spike.tscn" id="4_k0juu"]
+[ext_resource type="Texture2D" uid="uid://bngioxn2yr5lt" path="res://assets/UI/Death_Screen.jpg" id="5_w7kh3"]
 [ext_resource type="Texture2D" uid="uid://0ojndkwyknny" path="res://assets/Enviroment/Parallax_Plane_City/Projection_Texture.png" id="6_4mrxx"]
 [ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="6_i7141"]
 [ext_resource type="ArrayMesh" uid="uid://c0eg8ty8uwl4w" path="res://assets/Enviroment/Parallax_Plane_Mountains.obj" id="7_4mrxx"]
@@ -38,68 +39,97 @@ transparency = 1
 diffuse_mode = 1
 albedo_texture = ExtResource("8_7r4gi")
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" unique_id=2070051394]
 script = ExtResource("1_4wyf3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1800372652]
 transform = Transform3D(30, 0, 0, 0, 0.9, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2054113483]
 mesh = SubResource("BoxMesh_e5uuo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=599338605]
 shape = SubResource("BoxShape3D_nnsk1")
 
-[node name="Player" parent="." instance=ExtResource("1_nnsk1")]
+[node name="Player" parent="." unique_id=1327306059 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94864, 1.45495, 4.89355)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=353735692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984773, 2.4984, 8.57422)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1155011030]
 environment = SubResource("Environment_4wyf3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=320850603]
 transform = Transform3D(-0.0686422, 0, 0.997641, 0, 1, 0, -0.997641, 0, -0.0686422, -8.18093, 4.10433, 5.52484)
 light_energy = 1.634
 shadow_enabled = true
 
-[node name="Monster" parent="." instance=ExtResource("2_rwgxs")]
+[node name="Monster" parent="." unique_id=611479351 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49323, 5.19355)
 
-[node name="Spike" parent="." instance=ExtResource("4_k0juu")]
+[node name="Spike" parent="." unique_id=800417198 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.853, 2, 5.106)
 script = null
 
-[node name="SpikeLauncher" type="Area3D" parent="."]
+[node name="SpikeLauncher" type="Area3D" parent="." unique_id=1536119333]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86973, 1.7337, 5.06492)
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpikeLauncher"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpikeLauncher" unique_id=186973887]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_k0juu")
 
-[node name="ResetButton" type="Button" parent="."]
-offset_right = 98.0
-offset_bottom = 52.0
-text = "RESET"
-
-[node name="ParallaxPlaneCity" type="MeshInstance3D" parent="."]
+[node name="ParallaxPlaneCity" type="MeshInstance3D" parent="." unique_id=1927156035]
 material_override = SubResource("StandardMaterial3D_7r4gi")
 mesh = ExtResource("6_i7141")
 
-[node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="."]
+[node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="." unique_id=305707165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
 material_override = SubResource("StandardMaterial3D_w7kh3")
 mesh = ExtResource("7_4mrxx")
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=885673983]
 mesh_library = ExtResource("10_w7kh3")
 data = {
 "cells": PackedInt32Array(327678, 7, 1441801, 327679, 7, 1441797, 327677, 7, 1441793)
 }
 metadata/_editor_floor_ = Vector3(0, 5, 0)
 
+[node name="Reset_Control" type="Control" parent="." unique_id=651189867]
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Reset_Control" unique_id=1886757513]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_w7kh3")
+expand_mode = 1
+
+[node name="ResetButton" type="Button" parent="Reset_Control" unique_id=985209362]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.411
+anchor_top = 0.67600006
+anchor_right = 0.58500004
+anchor_bottom = 1.0
+offset_left = -0.47201538
+offset_top = 57.951965
+offset_right = -0.92004395
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "TRY AGAIN"
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="body_entered" from="SpikeLauncher" to="Spike" method="_on_spike_launcher_body_entered"]
-[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="Reset_Control/ResetButton" to="." method="_on_reset_button_pressed"]
