@@ -8,36 +8,36 @@
 [node name="Player_Character" unique_id=826891210 instance=ExtResource("1_h744p")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Armature" parent="." index="0" unique_id=846849787]
+[node name="Armature" parent="." index="0" unique_id=1525382239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015239278, 0)
 
-[node name="Skeleton" parent="Armature" index="0" unique_id=692460554]
-bones/0/position = Vector3(0.0007725661, 0.99474585, -0.000757024)
-bones/0/rotation = Quaternion(-0.008101701, -0.007762175, -0.011757494, 0.99986804)
-bones/1/rotation = Quaternion(0.009337097, -0.001908966, -0.014741762, 0.999846)
+[node name="Skeleton" parent="Armature" index="0" unique_id=34623960]
+bones/0/position = Vector3(-3.3015945e-07, 0.99791867, 4.408727e-07)
+bones/0/rotation = Quaternion(0, 1.1368684e-13, 0, 1)
+bones/1/rotation = Quaternion(4.172933e-09, 7.7989775e-09, -2.5028203e-07, 1)
 bones/2/rotation = Quaternion(-0.03352355, 0.0006143403, -0.0008905807, 0.9994374)
 bones/3/rotation = Quaternion(-0.03352305, 0.0006624648, -0.0009070397, 0.99943733)
 bones/4/rotation = Quaternion(-0.023434587, -0.002664369, -0.003768269, 0.9997148)
 bones/5/rotation = Quaternion(-0.06719456, -0.049987562, -0.07913487, 0.9933397)
-bones/8/rotation = Quaternion(0.58426046, 0.38065064, 0.5689645, -0.43591774)
-bones/9/rotation = Quaternion(0.07602242, 0.8621233, -0.46931213, -0.17524335)
-bones/10/rotation = Quaternion(0.054381814, -0.7050125, 0.05438177, 0.7050125)
+bones/8/rotation = Quaternion(0.5000315, 0.49996853, 0.5000315, -0.49996853)
+bones/9/rotation = Quaternion(-1.2814997e-06, 1, 1.9073485e-05, 2.0861623e-07)
+bones/10/rotation = Quaternion(0, -0.70710677, 4.2146848e-08, 0.70710677)
 bones/11/rotation = Quaternion(0.022114538, 0.7086793, 0.0022716727, 0.7051804)
-bones/37/rotation = Quaternion(0.5658398, -0.40735987, -0.5443441, -0.466447)
-bones/38/rotation = Quaternion(0.05865019, 0.82629234, -0.5601793, 0.0005025863)
-bones/39/rotation = Quaternion(0.088571385, 0.7015376, -0.088571474, 0.7015377)
+bones/37/rotation = Quaternion(0.4999682, -0.50003165, -0.49996835, -0.5000319)
+bones/38/rotation = Quaternion(-4.7683716e-07, 1, -2.002716e-05, -2.3841858e-07)
+bones/39/rotation = Quaternion(-4.2146848e-08, 0.7071068, -4.2146848e-08, 0.7071067)
 bones/40/rotation = Quaternion(0.09402921, -0.7708897, -0.084352754, 0.62431735)
-bones/66/rotation = Quaternion(0.06706432, 0.049817804, 0.9959057, -0.03453477)
-bones/67/rotation = Quaternion(-0.02087278, 0.98862517, -0.14794725, 0.01721562)
-bones/68/rotation = Quaternion(-0.03972385, 0.64962345, -0.75796497, 0.043594003)
+bones/66/rotation = Quaternion(8.257095e-09, 1.0294885e-05, 1, -1.1558964e-07)
+bones/67/rotation = Quaternion(3.0267988e-09, 1, -1.9790607e-05, -5.4595155e-08)
+bones/68/rotation = Quaternion(-2.0978244e-07, 0.7071001, -0.70711344, 2.9104066e-07)
 bones/69/rotation = Quaternion(2.0414879e-08, 1, -8.940697e-08, -1.3829434e-08)
-bones/72/rotation = Quaternion(-0.097158805, 0.0029750762, 0.99432796, 0.04316553)
-bones/73/rotation = Quaternion(0.020473413, 0.99444187, -0.08650313, -0.05642408)
-bones/74/rotation = Quaternion(0.050595883, 0.6787071, -0.73053324, -0.055839688)
+bones/72/rotation = Quaternion(8.070471e-09, 4.5453115e-07, 1, -2.1136213e-07)
+bones/73/rotation = Quaternion(-6.9849204e-10, 1, -2.7939682e-09, -2.9103834e-11)
+bones/74/rotation = Quaternion(-3.5537738e-07, 0.70710707, -0.7071065, 3.640825e-07)
 bones/75/rotation = Quaternion(-5.6308636e-08, 1, 0.00011712313, -0.00017767827)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton" index="1" unique_id=1253815460]
-transform = Transform3D(0.96889675, 0.23006736, -0.091149636, -0.19031607, 0.92818177, 0.31977886, 0.15817407, -0.2924854, 0.9430977, 0.032541636, 1.5989062, -0.05228412)
+transform = Transform3D(0.9805271, 0.17490722, -0.08929758, -0.13842145, 0.93809485, 0.31751776, 0.13930574, -0.29897407, 0.9440384, 0.001762748, 1.6030374, -0.051589698)
 bone_name = "Head"
 bone_idx = 5
 
@@ -48,6 +48,6 @@ visible = false
 [node name="Mask_02_Combat" parent="Armature/Skeleton/BoneAttachment3D" index="1" unique_id=395171146 instance=ExtResource("3_pkxtq")]
 transform = Transform3D(1, 2.2351742e-08, 0, 4.0978193e-08, 1.0000001, 0, 1.4901161e-08, 0, 1, -0.0053457916, -1.6514596, 0.0016124547)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1578349288]
+[node name="AnimationPlayer" parent="." index="1" unique_id=2003884141]
 libraries/Player_Local = ExtResource("2_6656o")
 autoplay = &"Player_Local/happy_idle"
