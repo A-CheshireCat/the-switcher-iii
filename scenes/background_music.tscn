@@ -2,13 +2,11 @@
 
 [ext_resource type="AudioStream" uid="uid://cpch3fqjuv4ii" path="res://assets/Audio/Music/Witchers_Trail.mp3" id="1_u6r47"]
 [ext_resource type="AudioStream" uid="uid://xa5v8thlp3ty" path="res://assets/Audio/Music/Where_the_Piglet_is_going.mp3" id="2_vjuvc"]
-[ext_resource type="AudioStream" uid="uid://dculxqdgg3eui" path="res://assets/Audio/Music/Tri_Tachyon_Intro_Riser.mp3" id="3_xlhw1"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ijhdc"]
-stream_count = 3
+stream_count = 2
 stream_0 = ExtResource("1_u6r47")
 stream_1 = ExtResource("2_vjuvc")
-stream_2 = ExtResource("3_xlhw1")
 
 [node name="Background Music" type="Node3D" unique_id=316618846]
 
