@@ -7,7 +7,6 @@ signal hit
 
 var mask1_active: bool = true
 var mask2_active: bool = false
-var mask3_active: bool = false
 var double_jump_active: bool = false
 
 @onready var collision_mask2: CollisionShape3D = $HitAreaMask2/CollisionShape3D
