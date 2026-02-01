@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbuew4jhwkqvq"]
-
-[ext_resource type="Texture2D" uid="uid://cf422ufdwrtvn" path="res://assets/Actors/Mask_02_Texx.png" id="1_2a8f6"]
-
-[resource]
-albedo_texture = ExtResource("1_2a8f6")

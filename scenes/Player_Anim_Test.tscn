@@ -1,127 +1,40 @@
-[gd_scene format=3 uid="uid://psesseg1jgx5"]
+[gd_scene load_steps=3 format=3 uid="uid://psesseg1jgx5"]
 
 [ext_resource type="PackedScene" uid="uid://cmlw2kj2omc1p" path="res://assets/Actors/Player_Character.fbx" id="1_h744p"]
-[ext_resource type="AudioStream" uid="uid://b5bj1r7k611fi" path="res://assets/Audio/SFX/Jump_Sounds_Snap.wav" id="2_3oxel"]
 [ext_resource type="AnimationLibrary" uid="uid://o60v4lcm0xtw" path="res://assets/Animations/Retargeted/Player_Local.res" id="2_6656o"]
-[ext_resource type="PackedScene" uid="uid://c5lgax3lsmgu3" path="res://assets/Actors/Mask_01_Movement.fbx" id="2_pghf4"]
-[ext_resource type="PackedScene" uid="uid://c2vabjfup2ls2" path="res://assets/Actors/Mask_02_Combat.fbx" id="3_pkxtq"]
 
+[node name="Player_Character" instance=ExtResource("1_h744p")]
 
-[node name="Player_Character" unique_id=826891210 instance=ExtResource("1_h744p")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="Armature" parent="." index="0" unique_id=846849787]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015239278, 0)
-
-[node name="Skeleton" parent="Armature" index="0" unique_id=692460554]
-bones/0/position = Vector3(0.0007725661, 0.99474585, -0.000757024)
-bones/0/rotation = Quaternion(-0.008101701, -0.007762175, -0.011757494, 0.99986804)
-bones/1/rotation = Quaternion(0.009337097, -0.001908966, -0.014741762, 0.999846)
-bones/2/rotation = Quaternion(-0.03352355, 0.0006143403, -0.0008905807, 0.9994374)
-bones/3/rotation = Quaternion(-0.03352305, 0.0006624648, -0.0009070397, 0.99943733)
-bones/4/rotation = Quaternion(-0.023434587, -0.002664369, -0.003768269, 0.9997148)
-bones/5/rotation = Quaternion(-0.06719456, -0.049987562, -0.07913487, 0.9933397)
-bones/8/rotation = Quaternion(0.58426046, 0.38065064, 0.5689645, -0.43591774)
-bones/9/rotation = Quaternion(0.07602242, 0.8621233, -0.46931213, -0.17524335)
-bones/10/rotation = Quaternion(0.054381814, -0.7050125, 0.05438177, 0.7050125)
-bones/11/rotation = Quaternion(0.022114538, 0.7086793, 0.0022716727, 0.7051804)
-bones/37/rotation = Quaternion(0.5658398, -0.40735987, -0.5443441, -0.466447)
-bones/38/rotation = Quaternion(0.05865019, 0.82629234, -0.5601793, 0.0005025863)
-bones/39/rotation = Quaternion(0.088571385, 0.7015376, -0.088571474, 0.7015377)
-bones/40/rotation = Quaternion(0.09402921, -0.7708897, -0.084352754, 0.62431735)
-bones/66/rotation = Quaternion(0.06706432, 0.049817804, 0.9959057, -0.03453477)
-bones/67/rotation = Quaternion(-0.02087278, 0.98862517, -0.14794725, 0.01721562)
-bones/68/rotation = Quaternion(-0.03972385, 0.64962345, -0.75796497, 0.043594003)
-bones/69/rotation = Quaternion(2.0414879e-08, 1, -8.940697e-08, -1.3829434e-08)
-bones/72/rotation = Quaternion(-0.097158805, 0.0029750762, 0.99432796, 0.04316553)
-bones/73/rotation = Quaternion(0.020473413, 0.99444187, -0.08650313, -0.05642408)
-bones/74/rotation = Quaternion(0.050595883, 0.6787071, -0.73053324, -0.055839688)
-bones/75/rotation = Quaternion(-5.6308636e-08, 1, 0.00011712313, -0.00017767827)
-
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton" index="1" unique_id=1253815460]
-transform = Transform3D(0.96889675, 0.23006736, -0.091149636, -0.19031607, 0.92818177, 0.31977886, 0.15817407, -0.2924854, 0.9430977, 0.032541636, 1.5989062, -0.05228412)
-bone_name = "Head"
-bone_idx = 5
-
-[node name="Mask_01_Movement" parent="Armature/Skeleton/BoneAttachment3D" index="0" unique_id=877801400 instance=ExtResource("2_pghf4")]
-transform = Transform3D(0.96038306, -0.19017558, 0.20370984, 0.24351923, 0.9281123, -0.28161436, -0.1355094, 0.32006514, 0.93765485, 0.32024965, -1.5003222, -0.5575669)
-visible = false
-
-[node name="Mask_02_Combat" parent="Armature/Skeleton/BoneAttachment3D" index="1" unique_id=395171146 instance=ExtResource("3_pkxtq")]
-transform = Transform3D(1, 2.2351742e-08, 0, 4.0978193e-08, 1.0000001, 0, 1.4901161e-08, 0, 1, -0.0053457916, -1.6514596, 0.0016124547)
-
-[node name="AnimationPlayer" parent="." index="1" unique_id=1578349288]
-libraries/Player_Local = ExtResource("2_6656o")
-autoplay = &"Player_Local/happy_idle"
-
-[sub_resource type="Animation" id="Animation_pghf4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer:stream")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_3oxel")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkxtq"]
-_data = {
-&"RESET": SubResource("Animation_pghf4")
-}
-
-[node name="Player_Character" unique_id=1210169103 instance=ExtResource("1_h744p")]
-
-[node name="Armature" parent="." index="0" unique_id=99725661]
+[node name="Armature" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0152393, 0)
 
-[node name="Skeleton" parent="Armature" index="0" unique_id=2025001895]
-bones/0/position = Vector3(0.0049606767, 0.8597256, -0.0029336042)
-bones/0/rotation = Quaternion(0.17413566, -0.07095538, -0.062306296, 0.9801837)
-bones/1/rotation = Quaternion(0.11611518, -0.023864647, 0.05672299, 0.9913276)
-bones/2/rotation = Quaternion(0.018138483, -0.007120431, 0.007566688, 0.99978155)
-bones/3/rotation = Quaternion(0.018085627, -0.0071407, 0.0074866875, 0.9997829)
-bones/4/rotation = Quaternion(-0.055361375, -0.0030692152, 0.011755825, 0.9983925)
-bones/5/rotation = Quaternion(-0.21488003, 0.10214098, -0.014291625, 0.9711795)
-bones/8/rotation = Quaternion(0.55424607, 0.42905807, 0.57334435, -0.42426014)
-bones/9/rotation = Quaternion(-0.013794744, 0.88555086, -0.45066598, -0.11184565)
-bones/10/rotation = Quaternion(0.41096538, -0.5754195, 0.41096532, 0.57541937)
-bones/11/rotation = Quaternion(-0.04199035, 0.7062523, 0.34738985, 0.6154388)
-bones/37/rotation = Quaternion(0.54107887, -0.42739445, -0.619901, -0.3745537)
-bones/38/rotation = Quaternion(0.010818644, 0.94128734, -0.32470232, 0.09181293)
-bones/39/rotation = Quaternion(0.46286625, 0.5345605, -0.46286613, 0.5345605)
-bones/40/rotation = Quaternion(-0.044759896, -0.8665999, -0.055344827, 0.49390107)
-bones/66/rotation = Quaternion(0.062200252, 0.16897953, 0.9791737, -0.093787126)
-bones/67/rotation = Quaternion(-0.022773724, 0.64321697, -0.76528823, 0.009342171)
-bones/68/rotation = Quaternion(-0.004984697, 0.7637985, -0.6454132, -0.005375438)
-bones/69/rotation = Quaternion(3.683854e-09, 0.9999928, 0.0038100223, -6.934697e-09)
-bones/72/rotation = Quaternion(0.022616446, 0.5299524, 0.8452964, -0.064133026)
-bones/73/rotation = Quaternion(0.019166214, 0.86880535, -0.49324545, -0.03897391)
-bones/74/rotation = Quaternion(0.014768239, 0.6387448, -0.7690892, -0.016998287)
-bones/75/rotation = Quaternion(1.7463861e-08, 0.99853176, 0.054169018, 2.788971e-09)
+[node name="Skeleton" parent="Armature" index="0"]
+bones/0/position = Vector3(0.000772566, 0.994746, -0.000757024)
+bones/0/rotation = Quaternion(-0.0081017, -0.00776218, -0.0117575, 0.999868)
+bones/1/rotation = Quaternion(0.0093371, -0.00190897, -0.0147418, 0.999846)
+bones/2/rotation = Quaternion(-0.0335235, 0.00061434, -0.000890581, 0.999437)
+bones/3/rotation = Quaternion(-0.033523, 0.000662465, -0.00090704, 0.999437)
+bones/4/rotation = Quaternion(-0.0234346, -0.00266437, -0.00376827, 0.999715)
+bones/5/rotation = Quaternion(-0.0671946, -0.0499876, -0.0791349, 0.99334)
+bones/8/rotation = Quaternion(0.58426, 0.380651, 0.568964, -0.435918)
+bones/9/rotation = Quaternion(0.0760224, 0.862123, -0.469312, -0.175243)
+bones/10/rotation = Quaternion(0.0543818, -0.705013, 0.0543818, 0.705013)
+bones/11/rotation = Quaternion(0.0221145, 0.708679, 0.00227167, 0.70518)
+bones/37/rotation = Quaternion(0.56584, -0.40736, -0.544344, -0.466447)
+bones/38/rotation = Quaternion(0.0586502, 0.826292, -0.560179, 0.000502586)
+bones/39/rotation = Quaternion(0.0885714, 0.701538, -0.0885715, 0.701538)
+bones/40/rotation = Quaternion(0.0940292, -0.77089, -0.0843528, 0.624317)
+bones/66/rotation = Quaternion(0.0670643, 0.0498178, 0.995906, -0.0345348)
+bones/67/rotation = Quaternion(-0.0208728, 0.988625, -0.147947, 0.0172156)
+bones/68/rotation = Quaternion(-0.0397239, 0.649623, -0.757965, 0.043594)
+bones/69/rotation = Quaternion(2.04149e-08, 1, -8.9407e-08, -1.38294e-08)
+bones/72/rotation = Quaternion(-0.0971588, 0.00297508, 0.994328, 0.0431655)
+bones/73/rotation = Quaternion(0.0204734, 0.994442, -0.0865031, -0.0564241)
+bones/74/rotation = Quaternion(0.0505959, 0.678707, -0.730533, -0.0558397)
+bones/75/rotation = Quaternion(-5.63086e-08, 1, 0.000117123, -0.000177678)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1941909062]
-libraries/ = SubResource("AnimationLibrary_pkxtq")
-libraries/Player_Local = ExtResource("2_6656o")
-autoplay = &"Player_Local/happy_idle"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2" unique_id=1771948202]
-stream = ExtResource("2_3oxel")
-bus = &"SFX"
-
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"Player_Local": ExtResource("2_6656o")
+}
+autoplay = "Player_Local/happy_idle"
