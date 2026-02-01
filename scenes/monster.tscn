@@ -5,7 +5,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mrqeg"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_uwnm8"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1cbnp"]
+height = 1.0
+radius = 0.3
 
 [node name="Monster" type="CharacterBody3D" unique_id=646365200]
 collision_layer = 2
@@ -16,11 +18,13 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.23239803, 0)
 shape = SubResource("SphereShape3D_mrqeg")
 
 [node name="HurtBox" type="Area3D" parent="." unique_id=500504917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3643806, 0)
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=207915541]
-shape = SubResource("SphereShape3D_uwnm8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42351186, 0)
+shape = SubResource("CylinderShape3D_1cbnp")
 
 [node name="The_Blob" parent="." unique_id=281558065 instance=ExtResource("2_1cbnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32853064, -0.17467344)
