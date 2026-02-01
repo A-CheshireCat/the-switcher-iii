@@ -21,6 +21,7 @@ shape = SubResource("CapsuleShape3D_g2els")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5543072e-09, -0.9137282, -0.058435738)
 
 [node name="HitAreaMask2" type="Area3D" parent="." unique_id=635542422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.94176716, 0)
 collision_layer = 2
 collision_mask = 0
 
