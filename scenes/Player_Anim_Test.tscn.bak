@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5lgax3lsmgu3" path="res://assets/Actors/Mask_01_Movement.fbx" id="2_pghf4"]
 [ext_resource type="PackedScene" uid="uid://c2vabjfup2ls2" path="res://assets/Actors/Mask_02_Combat.fbx" id="3_pkxtq"]
 
-
+<<<<<<< HEAD
 [node name="Player_Character" unique_id=826891210 instance=ExtResource("1_h744p")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
@@ -53,7 +53,7 @@ transform = Transform3D(1, 2.2351742e-08, 0, 4.0978193e-08, 1.0000001, 0, 1.4901
 [node name="AnimationPlayer" parent="." index="1" unique_id=1578349288]
 libraries/Player_Local = ExtResource("2_6656o")
 autoplay = &"Player_Local/happy_idle"
-
+=======
 [sub_resource type="Animation" id="Animation_pghf4"]
 length = 0.001
 tracks/0/type = "value"
@@ -92,29 +92,29 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0152393, 0)
 
 [node name="Skeleton" parent="Armature" index="0" unique_id=2025001895]
-bones/0/position = Vector3(0.0049606767, 0.8597256, -0.0029336042)
-bones/0/rotation = Quaternion(0.17413566, -0.07095538, -0.062306296, 0.9801837)
-bones/1/rotation = Quaternion(0.11611518, -0.023864647, 0.05672299, 0.9913276)
-bones/2/rotation = Quaternion(0.018138483, -0.007120431, 0.007566688, 0.99978155)
-bones/3/rotation = Quaternion(0.018085627, -0.0071407, 0.0074866875, 0.9997829)
-bones/4/rotation = Quaternion(-0.055361375, -0.0030692152, 0.011755825, 0.9983925)
-bones/5/rotation = Quaternion(-0.21488003, 0.10214098, -0.014291625, 0.9711795)
-bones/8/rotation = Quaternion(0.55424607, 0.42905807, 0.57334435, -0.42426014)
-bones/9/rotation = Quaternion(-0.013794744, 0.88555086, -0.45066598, -0.11184565)
-bones/10/rotation = Quaternion(0.41096538, -0.5754195, 0.41096532, 0.57541937)
-bones/11/rotation = Quaternion(-0.04199035, 0.7062523, 0.34738985, 0.6154388)
-bones/37/rotation = Quaternion(0.54107887, -0.42739445, -0.619901, -0.3745537)
-bones/38/rotation = Quaternion(0.010818644, 0.94128734, -0.32470232, 0.09181293)
-bones/39/rotation = Quaternion(0.46286625, 0.5345605, -0.46286613, 0.5345605)
-bones/40/rotation = Quaternion(-0.044759896, -0.8665999, -0.055344827, 0.49390107)
-bones/66/rotation = Quaternion(0.062200252, 0.16897953, 0.9791737, -0.093787126)
-bones/67/rotation = Quaternion(-0.022773724, 0.64321697, -0.76528823, 0.009342171)
-bones/68/rotation = Quaternion(-0.004984697, 0.7637985, -0.6454132, -0.005375438)
-bones/69/rotation = Quaternion(3.683854e-09, 0.9999928, 0.0038100223, -6.934697e-09)
-bones/72/rotation = Quaternion(0.022616446, 0.5299524, 0.8452964, -0.064133026)
-bones/73/rotation = Quaternion(0.019166214, 0.86880535, -0.49324545, -0.03897391)
-bones/74/rotation = Quaternion(0.014768239, 0.6387448, -0.7690892, -0.016998287)
-bones/75/rotation = Quaternion(1.7463861e-08, 0.99853176, 0.054169018, 2.788971e-09)
+bones/0/position = Vector3(0.0046337433, 0.8483411, 0.0052264123)
+bones/0/rotation = Quaternion(0.18239237, -0.13298294, -0.027407482, 0.97380567)
+bones/1/rotation = Quaternion(0.12269239, 0.122151814, -0.006767375, 0.9848755)
+bones/2/rotation = Quaternion(0.008276496, 0.03299905, 0.0023870806, 0.99941826)
+bones/3/rotation = Quaternion(0.008507504, 0.03276538, 0.0022247445, 0.99942446)
+bones/4/rotation = Quaternion(-0.06538942, -0.018720848, 0.009138961, 0.9976424)
+bones/5/rotation = Quaternion(-0.20582649, -0.019304894, -0.031659566, 0.9778857)
+bones/8/rotation = Quaternion(0.55861187, 0.4334222, 0.5316837, -0.46627307)
+bones/9/rotation = Quaternion(-0.35321212, 0.7893584, -0.4307512, -0.25808552)
+bones/10/rotation = Quaternion(0.40827936, -0.5773284, 0.408279, 0.5773286)
+bones/11/rotation = Quaternion(-0.028564524, 0.77162385, 0.19854948, 0.60362154)
+bones/37/rotation = Quaternion(0.5186303, -0.45434183, -0.61073, -0.3893649)
+bones/38/rotation = Quaternion(-0.24142623, 0.9097676, -0.2804051, -0.1881738)
+bones/39/rotation = Quaternion(0.56604344, 0.42378682, -0.56604296, 0.42378664)
+bones/40/rotation = Quaternion(-0.099705905, -0.88599336, -0.21972014, 0.39597687)
+bones/66/rotation = Quaternion(0.08755884, 0.65768325, 0.74005824, -0.11000053)
+bones/67/rotation = Quaternion(0.020186849, 0.5324583, -0.8459578, -0.020886948)
+bones/68/rotation = Quaternion(0.08422688, 0.6742843, -0.7290452, -0.08209516)
+bones/69/rotation = Quaternion(6.0064878e-09, 0.9999574, 0.009236375, -7.775336e-09)
+bones/72/rotation = Quaternion(-0.0146681275, 0.16110708, 0.98674744, 0.012610765)
+bones/73/rotation = Quaternion(0.018056888, 0.917227, -0.38948846, 0.081654444)
+bones/74/rotation = Quaternion(0.042663038, 0.47056043, -0.8809413, -0.026366772)
+bones/75/rotation = Quaternion(-1.6710828e-08, 0.98411965, 0.17750645, 1.3271245e-08)
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=1941909062]
 libraries/ = SubResource("AnimationLibrary_pkxtq")
@@ -124,4 +124,4 @@ autoplay = &"Player_Local/happy_idle"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2" unique_id=1771948202]
 stream = ExtResource("2_3oxel")
 bus = &"SFX"
-
+>>>>>>> c4cdd268847a7cc5e73e7df6586d313f924856e2

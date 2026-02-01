@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnikr8vrw5xjj"
-path="res://.godot/imported/Player_Chara_Skin.jpg-3f233eafbbd5144c8fc0ac3a8238840e.ctex"
+uid="uid://ci8j2h7c2ol85"
+path="res://.godot/imported/Player_Chara_Skin.jpg-91e7761f3bcf0329a6784a8f833bd0e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Actors/Player_Tex/Player_Chara_Skin.jpg"
-dest_files=["res://.godot/imported/Player_Chara_Skin.jpg-3f233eafbbd5144c8fc0ac3a8238840e.ctex"]
+source_file="res://assets/Actors/Player_Chara_Body/Player_Chara_Skin.jpg"
+dest_files=["res://.godot/imported/Player_Chara_Skin.jpg-91e7761f3bcf0329a6784a8f833bd0e4.ctex"]
 
 [params]
 

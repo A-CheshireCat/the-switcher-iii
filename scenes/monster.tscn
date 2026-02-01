@@ -1,10 +1,9 @@
-[gd_scene load_steps=0 format=3 uid="uid://1gmc0sac64ja"]
+[gd_scene format=3 uid="uid://1gmc0sac64ja"]
 
 [ext_resource type="Script" uid="uid://b4y1fqc3g7teo" path="res://scripts/monster.gd" id="1_s3gyj"]
+[ext_resource type="PackedScene" uid="uid://dkvvqhtf0l6m3" path="res://assets/Actors/The_Blob.fbx" id="2_1cbnp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mrqeg"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_ga5te"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uwnm8"]
 
@@ -13,10 +12,8 @@ collision_layer = 2
 script = ExtResource("1_s3gyj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1663755421]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.23239803, 0)
 shape = SubResource("SphereShape3D_mrqeg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2043374184]
-mesh = SubResource("SphereMesh_ga5te")
 
 [node name="HurtBox" type="Area3D" parent="." unique_id=500504917]
 collision_layer = 0
@@ -24,5 +21,8 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=207915541]
 shape = SubResource("SphereShape3D_uwnm8")
+
+[node name="The_Blob" parent="." unique_id=281558065 instance=ExtResource("2_1cbnp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32853064, -0.17467344)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
