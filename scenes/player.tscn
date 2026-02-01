@@ -10,6 +10,7 @@ size = Vector3(0.730469, 0.226074, 0.762695)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
 
+
 [node name="Player" type="CharacterBody3D" unique_id=1327306059]
 script = ExtResource("1_3vyb7")
 
@@ -25,15 +26,39 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitAreaMask2" unique_id=1275848833]
+
+[node name="Player" type="CharacterBody3D" unique_id=543759551]
+script = ExtResource("1_3vyb7")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="." unique_id=1668640746]
+shape = SubResource("CapsuleShape3D_g2els")
+
+[node name="Player_Character" parent="PlayerCollision" unique_id=245918353 instance=ExtResource("2_g2els")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.998429, 0)
+
+[node name="HitAreaMask2" type="Area3D" parent="." unique_id=1679649652]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitAreaMask2" unique_id=1585900595]
+
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.10601, 0)
 shape = SubResource("BoxShape3D_3vyb7")
 disabled = true
+
 
 [node name="MobDetector" type="Area3D" parent="." unique_id=75783286]
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector" unique_id=926085408]
+
+[node name="MobDetector" type="Area3D" parent="." unique_id=1688927806]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector" unique_id=590733199]
+
 shape = SubResource("CapsuleShape3D_3vyb7")
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]

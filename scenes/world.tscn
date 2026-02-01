@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhlq5ct1fdhk0"]
 
-[ext_resource type="Script" uid="uid://dldyo3u40txlb" path="res://scripts/world.gd" id="1_4wyf3"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://das8sjmy7y3a3" path="res://scenes/spike.tscn" id="4_k0juu"]
@@ -9,7 +9,6 @@
 [ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="6_i7141"]
 [ext_resource type="ArrayMesh" uid="uid://c0eg8ty8uwl4w" path="res://assets/Enviroment/Parallax_Plane_Mountains.obj" id="7_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://cwjgrjx5h8uq" path="res://assets/Enviroment/Parallax_Plane_Mountains/Projection_Texture_02.png" id="8_7r4gi"]
-[ext_resource type="MeshLibrary" uid="uid://bhnwvpr0gimbd" path="res://assets/ML1.meshlib" id="10_w7kh3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e5uuo"]
 
@@ -39,6 +38,7 @@ transparency = 1
 diffuse_mode = 1
 albedo_texture = ExtResource("8_7r4gi")
 
+
 [node name="World" type="Node3D" unique_id=2070051394]
 script = ExtResource("1_4wyf3")
 
@@ -61,9 +61,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984773, 2.4984, 8.57422)
 environment = SubResource("Environment_4wyf3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=320850603]
+
+[node name="World" type="Node3D" unique_id=1726185393]
+script = ExtResource("1_4wyf3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=967205291]
+transform = Transform3D(30, 0, 0, 0, 0.9, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1094742824]
+mesh = SubResource("BoxMesh_e5uuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=860211609]
+shape = SubResource("BoxShape3D_nnsk1")
+
+[node name="Player" parent="." unique_id=1219177849 instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94864, 1.45495, 4.89355)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=327285636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984773, 2.4984, 8.57422)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=62588929]
+environment = SubResource("Environment_4wyf3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1769251901]
+
 transform = Transform3D(-0.0686422, 0, 0.997641, 0, 1, 0, -0.997641, 0, -0.0686422, -8.18093, 4.10433, 5.52484)
 light_energy = 1.634
 shadow_enabled = true
+
 
 [node name="Monster" parent="." unique_id=611479351 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49323, 5.19355)
@@ -85,9 +110,37 @@ material_override = SubResource("StandardMaterial3D_7r4gi")
 mesh = ExtResource("6_i7141")
 
 [node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="." unique_id=305707165]
+
+[node name="Monster" parent="." unique_id=984399919 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49323, 5.19355)
+
+[node name="Spike" parent="." unique_id=519187095 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.853, 2, 5.106)
+script = null
+
+[node name="SpikeLauncher" type="Area3D" parent="." unique_id=1333148845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86973, 1.7337, 5.06492)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpikeLauncher" unique_id=277804301]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_k0juu")
+
+[node name="ResetButton" type="Button" parent="." unique_id=1216994284]
+offset_right = 98.0
+offset_bottom = 52.0
+text = "RESET"
+
+[node name="ParallaxPlaneCity" type="MeshInstance3D" parent="." unique_id=92639398]
+material_override = SubResource("StandardMaterial3D_7r4gi")
+mesh = ExtResource("6_i7141")
+
+[node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="." unique_id=1368438578]
+
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
 material_override = SubResource("StandardMaterial3D_w7kh3")
 mesh = ExtResource("7_4mrxx")
+
 
 [node name="GridMap" type="GridMap" parent="." unique_id=885673983]
 mesh_library = ExtResource("10_w7kh3")
