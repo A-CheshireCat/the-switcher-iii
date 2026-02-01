@@ -30,6 +30,12 @@ script = ExtResource("1_fgroy")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1813433867]
 environment = SubResource("Environment_bk3u3")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/WorldEnvironment" unique_id=276284203]
+transform = Transform3D(0.9953204, 0.09433591, -0.020932168, -0.076770954, 0.90353864, 0.42157328, 0.05868247, -0.4179935, 0.9065527, 1, 9, 6)
+light_indirect_energy = 0.2
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+
 [node name="GridMap" type="GridMap" parent="World" unique_id=293373022]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh_library = ExtResource("1_qwhf2")
@@ -222,9 +228,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -1)
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1624505576]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 4, 7)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player" unique_id=276284203]
-transform = Transform3D(0.7485855, 0.33151916, -0.57420796, -0.076770976, 0.9035387, 0.42157325, 0.6585787, -0.27150112, 0.70182705, 0, 5, 7)
-
 [node name="Control" type="Control" parent="." unique_id=673890646]
 layout_mode = 3
 anchors_preset = 0
@@ -239,11 +242,15 @@ text = "RESET"
 
 [node name="ParallaxPlaneCity" type="MeshInstance3D" parent="." unique_id=327480334]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.715378, -12.7373905, -18.752758)
+gi_mode = 2
+gi_lightmap_texel_scale = 0.2
 mesh = ExtResource("5_xrid1")
 surface_material_override/0 = ExtResource("6_xs5uq")
 
 [node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="." unique_id=1763727806]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -45.698265, -16.870502, -37.726814)
+gi_mode = 2
+gi_lightmap_texel_scale = 0.2
 mesh = ExtResource("6_6d1lw")
 surface_material_override/0 = ExtResource("8_xs5uq")
 
