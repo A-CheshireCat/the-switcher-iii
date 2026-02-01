@@ -1,40 +1,76 @@
-[gd_scene load_steps=3 format=3 uid="uid://psesseg1jgx5"]
+[gd_scene format=3 uid="uid://psesseg1jgx5"]
 
 [ext_resource type="PackedScene" uid="uid://cmlw2kj2omc1p" path="res://assets/Actors/Player_Character.fbx" id="1_h744p"]
+[ext_resource type="AudioStream" uid="uid://b5bj1r7k611fi" path="res://assets/Audio/SFX/Jump_Sounds_Snap.wav" id="2_3oxel"]
 [ext_resource type="AnimationLibrary" uid="uid://o60v4lcm0xtw" path="res://assets/Animations/Retargeted/Player_Local.res" id="2_6656o"]
 
-[node name="Player_Character" instance=ExtResource("1_h744p")]
+[sub_resource type="Animation" id="Animation_pghf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3oxel")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[node name="Armature" parent="." index="0"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkxtq"]
+_data = {
+&"RESET": SubResource("Animation_pghf4")
+}
+
+[node name="Player_Character" unique_id=1210169103 instance=ExtResource("1_h744p")]
+
+[node name="Armature" parent="." index="0" unique_id=99725661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0152393, 0)
 
-[node name="Skeleton" parent="Armature" index="0"]
-bones/0/position = Vector3(0.000772566, 0.994746, -0.000757024)
-bones/0/rotation = Quaternion(-0.0081017, -0.00776218, -0.0117575, 0.999868)
-bones/1/rotation = Quaternion(0.0093371, -0.00190897, -0.0147418, 0.999846)
-bones/2/rotation = Quaternion(-0.0335235, 0.00061434, -0.000890581, 0.999437)
-bones/3/rotation = Quaternion(-0.033523, 0.000662465, -0.00090704, 0.999437)
-bones/4/rotation = Quaternion(-0.0234346, -0.00266437, -0.00376827, 0.999715)
-bones/5/rotation = Quaternion(-0.0671946, -0.0499876, -0.0791349, 0.99334)
-bones/8/rotation = Quaternion(0.58426, 0.380651, 0.568964, -0.435918)
-bones/9/rotation = Quaternion(0.0760224, 0.862123, -0.469312, -0.175243)
-bones/10/rotation = Quaternion(0.0543818, -0.705013, 0.0543818, 0.705013)
-bones/11/rotation = Quaternion(0.0221145, 0.708679, 0.00227167, 0.70518)
-bones/37/rotation = Quaternion(0.56584, -0.40736, -0.544344, -0.466447)
-bones/38/rotation = Quaternion(0.0586502, 0.826292, -0.560179, 0.000502586)
-bones/39/rotation = Quaternion(0.0885714, 0.701538, -0.0885715, 0.701538)
-bones/40/rotation = Quaternion(0.0940292, -0.77089, -0.0843528, 0.624317)
-bones/66/rotation = Quaternion(0.0670643, 0.0498178, 0.995906, -0.0345348)
-bones/67/rotation = Quaternion(-0.0208728, 0.988625, -0.147947, 0.0172156)
-bones/68/rotation = Quaternion(-0.0397239, 0.649623, -0.757965, 0.043594)
-bones/69/rotation = Quaternion(2.04149e-08, 1, -8.9407e-08, -1.38294e-08)
-bones/72/rotation = Quaternion(-0.0971588, 0.00297508, 0.994328, 0.0431655)
-bones/73/rotation = Quaternion(0.0204734, 0.994442, -0.0865031, -0.0564241)
-bones/74/rotation = Quaternion(0.0505959, 0.678707, -0.730533, -0.0558397)
-bones/75/rotation = Quaternion(-5.63086e-08, 1, 0.000117123, -0.000177678)
+[node name="Skeleton" parent="Armature" index="0" unique_id=2025001895]
+bones/0/position = Vector3(0.0046337433, 0.8483411, 0.0052264123)
+bones/0/rotation = Quaternion(0.18239237, -0.13298294, -0.027407482, 0.97380567)
+bones/1/rotation = Quaternion(0.12269239, 0.122151814, -0.006767375, 0.9848755)
+bones/2/rotation = Quaternion(0.008276496, 0.03299905, 0.0023870806, 0.99941826)
+bones/3/rotation = Quaternion(0.008507504, 0.03276538, 0.0022247445, 0.99942446)
+bones/4/rotation = Quaternion(-0.06538942, -0.018720848, 0.009138961, 0.9976424)
+bones/5/rotation = Quaternion(-0.20582649, -0.019304894, -0.031659566, 0.9778857)
+bones/8/rotation = Quaternion(0.55861187, 0.4334222, 0.5316837, -0.46627307)
+bones/9/rotation = Quaternion(-0.35321212, 0.7893584, -0.4307512, -0.25808552)
+bones/10/rotation = Quaternion(0.40827936, -0.5773284, 0.408279, 0.5773286)
+bones/11/rotation = Quaternion(-0.028564524, 0.77162385, 0.19854948, 0.60362154)
+bones/37/rotation = Quaternion(0.5186303, -0.45434183, -0.61073, -0.3893649)
+bones/38/rotation = Quaternion(-0.24142623, 0.9097676, -0.2804051, -0.1881738)
+bones/39/rotation = Quaternion(0.56604344, 0.42378682, -0.56604296, 0.42378664)
+bones/40/rotation = Quaternion(-0.099705905, -0.88599336, -0.21972014, 0.39597687)
+bones/66/rotation = Quaternion(0.08755884, 0.65768325, 0.74005824, -0.11000053)
+bones/67/rotation = Quaternion(0.020186849, 0.5324583, -0.8459578, -0.020886948)
+bones/68/rotation = Quaternion(0.08422688, 0.6742843, -0.7290452, -0.08209516)
+bones/69/rotation = Quaternion(6.0064878e-09, 0.9999574, 0.009236375, -7.775336e-09)
+bones/72/rotation = Quaternion(-0.0146681275, 0.16110708, 0.98674744, 0.012610765)
+bones/73/rotation = Quaternion(0.018056888, 0.917227, -0.38948846, 0.081654444)
+bones/74/rotation = Quaternion(0.042663038, 0.47056043, -0.8809413, -0.026366772)
+bones/75/rotation = Quaternion(-1.6710828e-08, 0.98411965, 0.17750645, 1.3271245e-08)
 
-[node name="AnimationPlayer" parent="." index="1"]
-libraries = {
-&"Player_Local": ExtResource("2_6656o")
-}
-autoplay = "Player_Local/happy_idle"
+[node name="AnimationPlayer" parent="." index="1" unique_id=1941909062]
+libraries/ = SubResource("AnimationLibrary_pkxtq")
+libraries/Player_Local = ExtResource("2_6656o")
+autoplay = &"Player_Local/happy_idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2" unique_id=1771948202]
+stream = ExtResource("2_3oxel")
+bus = &"SFX"
