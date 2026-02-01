@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://cuwu551n7o8x8"]
+[gd_scene format=3 uid="uid://bsoekoma2jbsw"]
 
-[ext_resource type="Script" uid="uid://o85fdb0hvdyg" path="res://training_level.gd" id="1_fgroy"]
+[ext_resource type="Script" path="res://training_level.gd" id="1_fgroy"]
 [ext_resource type="MeshLibrary" uid="uid://cym2o0vwftsfi" path="res://assets/ML_simple.meshlib" id="1_qwhf2"]
 [ext_resource type="PackedScene" uid="uid://das8sjmy7y3a3" path="res://scenes/spike.tscn" id="2_bk3u3"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="2_qwhf2"]
+[ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="5_xrid1"]
+[ext_resource type="ArrayMesh" uid="uid://c0eg8ty8uwl4w" path="res://assets/Enviroment/Parallax_Plane_Mountains.obj" id="6_6d1lw"]
+[ext_resource type="Material" uid="uid://btt4cvhg8s4yo" path="res://assets/Materials/Background_Cityscape.tres" id="6_xs5uq"]
+[ext_resource type="Material" uid="uid://dnf6rksp4yjhm" path="res://assets/Materials/Background_Mountains.tres" id="8_xs5uq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwhf2"]
 
@@ -143,7 +147,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -1)
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 4, 7)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player" unique_id=276284203]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 5, 7)
+transform = Transform3D(0.7485855, 0.33151916, -0.57420796, -0.076770976, 0.9035387, 0.42157325, 0.6585787, -0.27150112, 0.70182705, 0, 5, 7)
 
 [node name="Spike" parent="." unique_id=1526234671 instance=ExtResource("2_bk3u3")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 36, 10, -1)
@@ -159,6 +163,16 @@ layout_mode = 0
 offset_right = 112.0
 offset_bottom = 67.0
 text = "RESET"
+
+[node name="ParallaxPlaneCity" type="MeshInstance3D" parent="." unique_id=327480334]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.715378, -12.7373905, -18.752758)
+mesh = ExtResource("5_xrid1")
+surface_material_override/0 = ExtResource("6_xs5uq")
+
+[node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="." unique_id=1763727806]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -45.698265, -16.870502, -37.726814)
+mesh = ExtResource("6_6d1lw")
+surface_material_override/0 = ExtResource("8_xs5uq")
 
 [connection signal="body_entered" from="World/TheSpikeOfDoom/Area3D" to="World/TheSpikeOfDoom/SpikeOfDoom" method="_on_area_3d_body_entered"]
 [connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]

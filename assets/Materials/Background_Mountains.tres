@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnf6rksp4yjhm"]
+
+[ext_resource type="Texture2D" uid="uid://cwjgrjx5h8uq" path="res://assets/Enviroment/Parallax_Plane_Mountains/Projection_Texture_02.png" id="1_37bf1"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_37bf1")
