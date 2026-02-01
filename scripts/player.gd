@@ -57,9 +57,14 @@ func change_mask(mask1: bool, mask2: bool, mask3: bool):
 func die():
 	hit.emit()
 	queue_free()
+	
 
 func _on_mob_detector_body_entered(_body: Node3D) -> void:
 	die()
 
 	
 	
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	$SpikeOfDoom

@@ -15,3 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_spike_launcher_body_entered(body: Node3D) -> void:
 	SPEED=-10
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	SPEED=-10
