@@ -19,6 +19,11 @@ run/main_scene="uid://dreibxc8ivnn8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/mixamo_animation_retargeter/plugin.cfg")
@@ -60,7 +65,7 @@ mask3={
 
 [physics]
 
-3d/physics_engine="Jolt Physics"
+3d/physics_engine="GodotPhysics3D"
 3d/default_gravity_vector=Vector3(0, -2, 0)
 
 [rendering]
@@ -68,3 +73,4 @@ mask3={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/msaa_3d=1

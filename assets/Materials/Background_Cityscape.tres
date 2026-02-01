@@ -1,7 +1,13 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://btt4cvhg8s4yo"]
 
 [ext_resource type="Texture2D" uid="uid://0ojndkwyknny" path="res://assets/Enviroment/Parallax_Plane_City/Projection_Texture.png" id="1_f22l2"]
+[ext_resource type="Texture2D" uid="uid://bblfhut2x85uy" path="res://assets/Enviroment/Parallax_Plane_City/Projection_Texture_spec.png" id="2_3ykjy"]
+[ext_resource type="Texture2D" uid="uid://dlhuhy6yi3n7t" path="res://assets/Enviroment/Parallax_Plane_City/Projection_Texture_normal.png" id="2_732k0"]
 
 [resource]
 transparency = 1
 albedo_texture = ExtResource("1_f22l2")
+normal_texture = ExtResource("2_732k0")
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("2_3ykjy")
+heightmap_flip_texture = true

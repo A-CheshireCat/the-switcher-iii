@@ -1,6 +1,19 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dxtgrcfpv2k6f"]
 
 [ext_resource type="Texture2D" uid="uid://dtviuj7302uy4" path="res://assets/Enviroment/Tileset/Cube_1_1/Level_Tex_01_1.png" id="1_qso4w"]
+[ext_resource type="Texture2D" uid="uid://cin70ss4yfwo4" path="res://assets/Enviroment/Tileset/Cube_1_1/Level_Tex_01_1_normal.png" id="2_bgixr"]
+[ext_resource type="Texture2D" uid="uid://b7wqh68ye7yxm" path="res://assets/Enviroment/Tileset/Cube_1_1/Level_Tex_01_1_displace.png" id="2_evf6c"]
+[ext_resource type="Texture2D" uid="uid://sqsn8dohtnmy" path="res://assets/Enviroment/Tileset/Cube_1_1/Level_Tex_01_1_spec.png" id="3_i1e8d"]
 
 [resource]
 albedo_texture = ExtResource("1_qso4w")
+roughness_texture = ExtResource("3_i1e8d")
+roughness_texture_channel = 3
+normal_enabled = true
+normal_texture = ExtResource("2_bgixr")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("2_evf6c")
+heightmap_flip_texture = true

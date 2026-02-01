@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sqsn8dohtnmy"
-path.s3tc="res://.godot/imported/Level_Tex_01_1_spec.png-7b05e61bd2d7f865e66f5144d39b7131.s3tc.ctex"
+uid="uid://c0wcn2qhrpl7y"
+path="res://.godot/imported/Player_Chara_Skin_normal.jpg-afdbd58809f1820717ec0036507adc43.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enviroment/Tileset/Cube_1_1/Level_Tex_01_1_spec.png"
-dest_files=["res://.godot/imported/Level_Tex_01_1_spec.png-7b05e61bd2d7f865e66f5144d39b7131.s3tc.ctex"]
+source_file="res://assets/Actors/Player_Character/Player_Chara_Skin_normal.jpg"
+dest_files=["res://.godot/imported/Player_Chara_Skin_normal.jpg-afdbd58809f1820717ec0036507adc43.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
