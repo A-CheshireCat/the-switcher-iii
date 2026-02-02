@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://bsoekoma2jbsw"]
 
-[ext_resource type="Script" uid="uid://o85fdb0hvdyg" path="res://training_level.gd" id="1_fgroy"]
-[ext_resource type="MeshLibrary" uid="uid://cym2o0vwftsfi" path="res://assets/ML_simple.meshlib" id="1_qwhf2"]
-[ext_resource type="PackedScene" uid="uid://das8sjmy7y3a3" path="res://scenes/spike.tscn" id="2_bk3u3"]
-[ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="2_qwhf2"]
-[ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="4_x7iho"]
-[ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="5_xrid1"]
-[ext_resource type="ArrayMesh" uid="uid://c0eg8ty8uwl4w" path="res://assets/Enviroment/Parallax_Plane_Mountains.obj" id="6_6d1lw"]
-[ext_resource type="Material" uid="uid://btt4cvhg8s4yo" path="res://assets/Materials/Background_Cityscape.tres" id="6_xs5uq"]
-[ext_resource type="Material" uid="uid://dnf6rksp4yjhm" path="res://assets/Materials/Background_Mountains.tres" id="8_xs5uq"]
+[ext_resource type="Script" uid="uid://o85fdb0hvdyg" path="res://scripts/level_1.gd" id="1_e3sih"]
+[ext_resource type="MeshLibrary" uid="uid://cym2o0vwftsfi" path="res://assets/ML_simple.meshlib" id="2_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://das8sjmy7y3a3" path="res://scenes/spike.tscn" id="3_2os1m"]
+[ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="4_go7sj"]
+[ext_resource type="Script" uid="uid://wm2ppsuntj8w" path="res://scripts/level_changer.gd" id="5_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="5_7gny6"]
+[ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="6_2aecg"]
+[ext_resource type="Material" uid="uid://btt4cvhg8s4yo" path="res://assets/Materials/Background_Cityscape.tres" id="7_6dial"]
+[ext_resource type="ArrayMesh" uid="uid://c0eg8ty8uwl4w" path="res://assets/Enviroment/Parallax_Plane_Mountains.obj" id="8_7nomh"]
+[ext_resource type="Material" uid="uid://dnf6rksp4yjhm" path="res://assets/Materials/Background_Mountains.tres" id="9_1s4pk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwhf2"]
 
@@ -22,11 +23,10 @@ sky = SubResource("Sky_rwgxs")
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgroy"]
 size = Vector3(1, 4, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xpeg2"]
-size = Vector3(4, 4, 4)
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3sih"]
 
-[node name="TrainingLevel" type="Node" unique_id=700140822]
-script = ExtResource("1_fgroy")
+[node name="level_1" type="Node" unique_id=700140822]
+script = ExtResource("1_e3sih")
 
 [node name="World" type="Node3D" parent="." unique_id=1905439584]
 
@@ -41,7 +41,7 @@ shadow_enabled = true
 
 [node name="GridMap" type="GridMap" parent="World" unique_id=293373022]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-mesh_library = ExtResource("1_qwhf2")
+mesh_library = ExtResource("2_2y5yt")
 cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(0, 65535, 1441792, 1, 65535, 1441792, 2, 65535, 1441792, 3, 65535, 1441792, 4, 65535, 1441792, 5, 65535, 1441792, 6, 65535, 1441792, 7, 65535, 1441792, 8, 65535, 1441792, 9, 65535, 1441792, 10, 65535, 1441792, 65540, 65535, 1441792, 65541, 65535, 1441792, 65544, 65535, 1441792, 65545, 65535, 1441792, 65546, 65535, 1441792, 131080, 65535, 1441792, 131081, 65535, 1441792, 131082, 65535, 1441792, 11, 65535, 1441792, 12, 65535, 1441792, 13, 65535, 1441792, 14, 65535, 1441792, 15, 65535, 1441792, 16, 65535, 1441792, 17, 65535, 1441792, 18, 65535, 1441792, 19, 65535, 1441792, 20, 65535, 1441792, 21, 65535, 1441792, 22, 65535, 1441792, 23, 65535, 1441792, 24, 65535, 1441792, 25, 65535, 1441792, 26, 65535, 1441792, 27, 65535, 1441792, 28, 65535, 1441792, 29, 65535, 1441792, 30, 65535, 1441792, 31, 65535, 1441792, 32, 65535, 1441792, 33, 65535, 1441792, 34, 65535, 1441792, 35, 65535, 1441792, 36, 65535, 1441792, 37, 65535, 1441792, 38, 65535, 1441792, 39, 65535, 1441792, 40, 65535, 1441792, 41, 65535, 1441792, 42, 65535, 1441792, 43, 65535, 1441792, 44, 65535, 1441792, 45, 65535, 1441792, 46, 65535, 1441792, 47, 65535, 1441792, 48, 65535, 1441792, 49, 65535, 1441792, 50, 65535, 1441792, 51, 65535, 1441792, 52, 65535, 1441792, 53, 65535, 1441792, 54, 65535, 1441792, 55, 65535, 1441792, 56, 65535, 1441792, 57, 65535, 1441792, 65547, 65535, 1441792, 65548, 65535, 1441792, 65549, 65535, 1441792, 65550, 65535, 1441792, 65551, 65535, 1441792, 65552, 65535, 1441792, 65553, 65535, 1441792, 65554, 65535, 1441792, 65555, 65535, 1441792, 65556, 65535, 1441792, 65557, 65535, 1441792, 65558, 65535, 1441792, 65559, 65535, 1441792, 65560, 65535, 1441792, 65561, 65535, 1441792, 65562, 65535, 1441792, 65563, 65535, 1441792, 65564, 65535, 1441792, 65565, 65535, 1441792, 65566, 65535, 1441792, 65567, 65535, 1441792, 65568, 65535, 1441792, 65569, 65535, 1441792, 65570, 65535, 1441792, 65571, 65535, 1441792, 65572, 65535, 1441792, 65573, 65535, 1441792, 65574, 65535, 1441792, 65575, 65535, 1441792, 65576, 65535, 1441792, 65577, 65535, 1441792, 65578, 65535, 1441792, 65579, 65535, 1441792, 65580, 65535, 1441792, 131116, 65535, 1441792, 131115, 65535, 1441792, 131114, 65535, 1441792, 131113, 65535, 1441792, 131112, 65535, 1441792, 131111, 65535, 1441792, 131110, 65535, 1441792, 131109, 65535, 1441792, 131108, 65535, 1441792, 131107, 65535, 1441792, 131106, 65535, 1441792, 131105, 65535, 1441792, 131104, 65535, 1048576, 131103, 65535, 1048576, 131102, 65535, 1048576, 131101, 65535, 1048576, 131100, 65535, 1048576, 131099, 65535, 1048576, 131098, 65535, 1048576, 131097, 65535, 1048576, 131096, 65535, 1048576, 131095, 65535, 1048576, 131094, 65535, 1048576, 131093, 65535, 1048576, 131092, 65535, 1048576, 131091, 65535, 1048576, 131090, 65535, 1048576, 131089, 65535, 1048576, 131088, 65535, 1048576, 131087, 65535, 1048576, 131086, 65535, 1048576, 131085, 65535, 1048576, 131084, 65535, 1048576, 131083, 65535, 1048576, 196618, 65535, 1048576, 196628, 65535, 1048576, 196629, 65535, 1048576, 262164, 65535, 1048576, 262165, 65535, 1048576, 262166, 65535, 1048576, 262167, 65535, 1048576, 262168, 65535, 1048576, 262169, 65535, 1048576, 262170, 65535, 1048576, 262171, 65535, 1048576, 262172, 65535, 1048576, 262173, 65535, 1048576, 262174, 65535, 1048576, 327701, 65535, 1048576, 327702, 65535, 1048576, 327703, 65535, 1048576, 393238, 65535, 1048576, 393239, 65535, 1048576, 458775, 65535, 1048576, 524311, 65535, 1048576, 524312, 65535, 1048576, 524313, 65535, 1048576, 524314, 65535, 1048576, 524315, 65535, 1048576, 524316, 65535, 1048576, 524317, 65535, 1048576, 524318, 65535, 1048576, 524319, 65535, 1048576, 524320, 65535, 1048576, 524321, 65535, 1048576, 524322, 65535, 1048576, 524323, 65535, 1048576, 458787, 65535, 1048576, 393251, 65535, 1048576, 327715, 65535, 1048576, 262179, 65535, 1048576, 196643, 65535, 1048576, 262182, 65535, 1048576, 262183, 65535, 1048576, 262184, 65535, 1048576, 262185, 65535, 1048576, 262186, 65535, 1048576, 458789, 65535, 1048576, 524325, 65535, 1048576, 589861, 65535, 1048576, 655397, 65535, 1048576, 720933, 65535, 1048576, 786469, 65535, 1048576, 196646, 65535, 1441792, 196647, 65535, 1441792, 196648, 65535, 1441792, 196649, 65535, 1441792, 196650, 65535, 1441792, 196651, 65535, 1441792, 196652, 65535, 1441792, 262187, 65535, 1441792, 262188, 65535, 1441792, 262189, 65535, 1441792, 327725, 65535, 1048576, 327724, 65535, 1441792, 327723, 65535, 1441792, 327726, 65535, 1441792, 327727, 65535, 1441792, 327728, 65535, 1441792, 327729, 65535, 1441792, 327730, 65535, 1441792, 327731, 65535, 1441792, 327732, 65535, 1441792, 327733, 65535, 1441792, 327734, 65535, 1441792, 327735, 65535, 1441792, 327737, 65535, 1048576, 327736, 65535, 1048576, 262201, 65535, 1048576, 196665, 65535, 1048576, 131129, 65535, 1048576, 65593, 65535, 1048576, 65592, 65535, 1048576, 65591, 65535, 1048576, 65590, 65535, 1048576, 65589, 65535, 1048576, 65588, 65535, 1048576, 65587, 65535, 1048576, 65586, 65535, 1441792, 65585, 65535, 1441792, 65584, 65535, 1048576, 65583, 65535, 1048576, 65582, 65535, 1048576, 65581, 65535, 1048576, 131128, 65535, 1048576, 131127, 65535, 1048576, 131126, 65535, 1048576, 131125, 65535, 1048576, 131124, 65535, 1048576, 131123, 65535, 1048576, 131122, 65535, 1048576, 131121, 65535, 1048576, 131120, 65535, 1048576, 131119, 65535, 1048576, 131118, 65535, 1048576, 131117, 65535, 1048576, 196653, 65535, 1048576, 196654, 65535, 1048576, 196655, 65535, 1048576, 196656, 65535, 1048576, 196657, 65535, 1048576, 196658, 65535, 1048576, 196659, 65535, 1048576, 196660, 65535, 1048576, 196661, 65535, 1048576, 196662, 65535, 1048576, 196663, 65535, 1048576, 196664, 65535, 1048576, 262200, 65535, 1048576, 262199, 65535, 1048576, 262198, 65535, 1048576, 262197, 65535, 1048576, 262196, 65535, 1048576, 262195, 65535, 1048576, 262194, 65535, 1048576, 262193, 65535, 1048576, 262192, 65535, 1048576, 262191, 65535, 1048576, 262190, 65535, 1048576, 327704, 65535, 1048576, 327705, 65535, 1048576, 327706, 65535, 1048576, 327707, 65535, 1048576, 327708, 65535, 1048576, 393240, 65535, 1048576, 393241, 65535, 1048576, 393242, 65535, 1048576, 393243, 65535, 1048576, 393244, 65535, 1048576, 458776, 65535, 1048576, 458777, 65535, 1048576, 458778, 65535, 1048576, 458779, 65535, 1048576, 458780, 65535, 1048576, 458781, 65535, 1048576, 458782, 65535, 1048576, 458783, 65535, 1048576, 458784, 65535, 1048576, 458785, 65535, 1048576, 458786, 65535, 1048576, 393245, 65535, 1048576, 393246, 65535, 1048576, 393247, 65535, 1048576, 393248, 65535, 1048576, 393249, 65535, 1048576, 393250, 65535, 1048576, 327709, 65535, 1048576, 327710, 65535, 1048576, 327711, 65535, 1048576, 327712, 65535, 1048576, 327713, 65535, 1048576, 327714, 65535, 1048576, 262175, 65535, 1048576, 262176, 65535, 1048576, 262177, 65535, 1048576, 262178, 65535, 1048576, 196642, 65535, 1048576, 196641, 65535, 1048576, 196640, 65535, 1048576, 196639, 65535, 1048576, 196638, 65535, 1048576, 196637, 65535, 1048576, 196636, 65535, 1048576, 196635, 65535, 1048576, 196634, 65535, 1048576, 196633, 65535, 1048576, 196632, 65535, 1048576, 196631, 65535, 1048576, 196630, 65535, 1048576, 458764, 65535, 1048576, 458765, 65535, 1048576, 458766, 65535, 1048576, 458767, 65535, 1048576, 458768, 65535, 1048576, 458769, 65535, 1048576, 458770, 65535, 1048576, 524300, 65535, 1048576, 524301, 65535, 1048576, 524302, 65535, 1048576, 524303, 65535, 1048576, 524304, 65535, 1048576, 524305, 65535, 1048576, 524306, 65535, 1048576, 589870, 65535, 1048576, 589871, 65535, 1048576, 589869, 65535, 1048576, 589868, 65535, 1048576, 589872, 65535, 1048576, 589873, 65535, 1048576, 589874, 65535, 1048576, 589875, 65535, 1048576, 589876, 65535, 1048576, 589877, 65535, 1048576, 655404, 65535, 1048576, 655405, 65535, 1048576, 655406, 65535, 1048576, 655407, 65535, 1048576, 655408, 65535, 1048576, 655409, 65535, 1048576, 655410, 65535, 1048576, 655411, 65535, 1048576, 655412, 65535, 1048576, 720940, 65535, 1048576, 720941, 65535, 1048576, 720942, 65535, 1048576, 720943, 65535, 1048576, 720944, 65535, 1048576, 720945, 65535, 1048576, 720946, 65535, 1048576, 720947, 65535, 1048576, 720948, 65535, 1048576, 720949, 65535, 1048576, 655413, 65535, 1048576, 393228, 65535, 0, 393229, 65535, 0, 393230, 65535, 0, 393231, 65535, 0, 393232, 65535, 0, 393233, 65535, 0, 393234, 65535, 0, 786456, 65535, 0, 786457, 65535, 0, 786458, 65535, 0, 786459, 65535, 0, 786460, 65535, 0, 786461, 65535, 0, 786462, 65535, 0, 786463, 65535, 0, 786464, 65535, 0, 786465, 65535, 0, 786466, 65535, 0, 786467, 65535, 0, 786468, 65535, 0, 65535, 65535, 1441792, 131071, 65535, 1441792, 196607, 65535, 1441792, 262143, 65535, 1441792, 327679, 65535, 1441792, 393273, 65535, 1441792, 458809, 65535, 1441792, 524345, 65535, 1441792, 589881, 65535, 1441792, 655417, 65535, 1441792, 720953, 65535, 1441792, 65535, 65534, 1441792, 0, 65534, 1441792, 1, 65534, 1441792, 1, 65533, 1441792, 2, 65533, 1441792, 3, 65533, 1441792, 4, 65533, 1441792, 5, 65533, 1441792, 6, 65534, 1441792, 5, 65534, 1441792, 4, 65534, 1441792, 3, 65534, 1441792, 2, 65534, 1441792, 7, 65534, 1441792, 8, 65534, 1441792, 9, 65534, 1441792, 10, 65534, 1441792, 11, 65534, 1441792, 12, 65534, 1441792, 13, 65534, 1441792, 14, 65534, 1441792, 15, 65534, 1441792, 16, 65534, 1441792, 17, 65534, 1441792, 18, 65534, 1441792, 19, 65534, 1441792, 20, 65534, 1441792, 21, 65534, 1441792, 22, 65534, 1441792, 23, 65534, 1441792, 24, 65534, 1441792, 25, 65534, 1441792, 26, 65534, 1441792, 27, 65534, 1441792, 28, 65534, 1441792, 29, 65534, 1441792, 30, 65534, 1441792, 31, 65534, 1441792, 32, 65534, 1441792, 33, 65534, 1441792, 34, 65534, 1441792, 37, 65534, 1441792, 38, 65534, 1441792, 39, 65534, 1441792, 54, 65534, 1441792, 56, 65534, 1441792, 57, 65534, 1441792, 58, 65534, 1441792, 55, 65534, 1441792, 53, 65534, 1441792, 52, 65534, 1441792, 51, 65534, 1441792, 50, 65534, 1441792, 49, 65534, 1441792, 48, 65534, 1441792, 47, 65534, 1441792, 46, 65534, 1441792, 45, 65534, 1441792, 44, 65534, 1441792, 40, 65534, 1441792, 41, 65534, 1441792, 36, 65534, 1441792, 35, 65534, 1441792, 42, 65534, 1441792, 42, 65533, 1441792, 43, 65533, 1441792, 44, 65533, 1441792, 43, 65534, 1441792, 40, 65533, 1441792, 41, 65533, 1441792, 131071, 65534, 1441792, 65536, 65534, 1441792, 65537, 65534, 1441792, 65538, 65534, 1441792, 65539, 65534, 1441792, 65540, 65534, 1441792, 65541, 65534, 1441792, 65542, 65534, 1441792, 65542, 65533, 1441792, 65543, 65534, 1441792, 65544, 65534, 1441792, 65545, 65534, 1441792, 65546, 65534, 1441792, 65547, 65534, 1441792, 65548, 65534, 1441792, 65549, 65534, 1441792, 65550, 65534, 1441792, 65551, 65534, 1441792, 65552, 65534, 1441792, 65553, 65534, 1441792, 65554, 65534, 1441792, 65555, 65534, 1441792, 65556, 65534, 1441792, 65557, 65534, 1441792, 65558, 65534, 1441792, 65559, 65534, 1441792, 65560, 65534, 1441792, 65561, 65534, 1441792, 65562, 65534, 1441792, 65563, 65534, 1441792, 65564, 65534, 1441792, 65565, 65534, 1441792, 65566, 65534, 1441792, 65567, 65534, 1441792, 65568, 65534, 1441792, 65569, 65534, 1441792, 65570, 65534, 1441792, 65571, 65534, 1441792, 65572, 65534, 1441792, 65573, 65534, 1441792, 65574, 65534, 1441792, 65575, 65534, 1441792, 65576, 65534, 1441792, 65577, 65534, 1441792, 65578, 65534, 1441792, 65579, 65534, 1441792, 65580, 65534, 1441792, 65581, 65534, 1441792, 65582, 65534, 1441792, 65582, 65533, 1441792, 65583, 65533, 1441792, 65584, 65533, 1441792, 65585, 65533, 1441792, 65586, 65534, 1441792, 65586, 65533, 1441792, 65587, 65534, 1441792, 65588, 65534, 1441792, 65589, 65534, 1441792, 65590, 65534, 1441792, 65591, 65534, 1441792, 65592, 65534, 1441792, 65593, 65534, 1441792, 65584, 65534, 1441792, 65585, 65534, 1441792, 65583, 65534, 1441792, 196607, 65534, 1441792, 131072, 65534, 1441792, 131073, 65534, 1441792, 131074, 65534, 1441792, 131075, 65534, 1441792, 131076, 65534, 1441792, 131077, 65534, 1441792, 131078, 65534, 1441792, 131079, 65534, 1441792, 131080, 65534, 1441792, 131081, 65534, 1441792, 131082, 65534, 1441792, 131083, 65534, 1441792, 131084, 65534, 1441792, 131085, 65534, 1441792, 131086, 65534, 1441792, 131087, 65534, 1441792, 131088, 65534, 1441792, 131089, 65534, 1441792, 131090, 65534, 1441792, 131091, 65534, 1441792, 131092, 65534, 1441792, 131093, 65534, 1441792, 131094, 65534, 1441792, 131095, 65534, 1441792, 131096, 65534, 1441792, 131097, 65534, 1441792, 131098, 65534, 1441792, 131099, 65534, 1441792, 131100, 65534, 1441792, 131101, 65534, 1441792, 131102, 65534, 1441792, 131103, 65534, 1441792, 131104, 65534, 1441792, 131105, 65534, 1441792, 131106, 65534, 1441792, 131107, 65534, 1441792, 131108, 65534, 1441792, 131109, 65534, 1441792, 131110, 65534, 1441792, 131111, 65534, 1441792, 131112, 65534, 1441792, 131113, 65534, 1441792, 131114, 65534, 1441792, 131115, 65534, 1441792, 131116, 65534, 1441792, 131117, 65534, 1441792, 131118, 65534, 1441792, 131119, 65534, 1441792, 131120, 65534, 1441792, 131121, 65534, 1441792, 131122, 65534, 1441792, 131123, 65534, 1441792, 131124, 65534, 1441792, 131125, 65534, 1441792, 131126, 65534, 1441792, 131127, 65534, 1441792, 131128, 65534, 1441792, 131129, 65534, 1441792, 262143, 65534, 1441792, 196608, 65534, 1441792, 196609, 65534, 1441792, 196610, 65534, 1441792, 196611, 65534, 1441792, 196612, 65534, 1441792, 196613, 65534, 1441792, 196614, 65534, 1441792, 196615, 65534, 1441792, 196616, 65534, 1441792, 196617, 65534, 1441792, 196618, 65534, 1441792, 196619, 65534, 1441792, 196620, 65534, 1441792, 196621, 65534, 1441792, 196622, 65534, 1441792, 196623, 65534, 1441792, 196624, 65534, 1441792, 196625, 65534, 1441792, 196626, 65534, 1441792, 196627, 65534, 1441792, 196628, 65534, 1441792, 196629, 65534, 1441792, 196630, 65534, 1441792, 196631, 65534, 1441792, 196632, 65534, 1441792, 196633, 65534, 1441792, 196634, 65534, 1441792, 196635, 65534, 1441792, 196636, 65534, 1441792, 196637, 65534, 1441792, 196638, 65534, 1441792, 196639, 65534, 1441792, 196640, 65534, 1441792, 196641, 65534, 1441792, 196642, 65534, 1441792, 196643, 65534, 1441792, 196644, 65534, 1441792, 196645, 65534, 1441792, 196646, 65534, 1441792, 196647, 65534, 1441792, 196648, 65534, 1441792, 196649, 65534, 1441792, 196650, 65534, 1441792, 196651, 65534, 1441792, 196652, 65534, 1441792, 196653, 65534, 1441792, 196654, 65534, 1441792, 196655, 65534, 1441792, 196656, 65534, 1441792, 196657, 65534, 1441792, 196658, 65534, 1441792, 196659, 65534, 1441792, 196660, 65534, 1441792, 196661, 65534, 1441792, 196662, 65534, 1441792, 196663, 65534, 1441792, 196664, 65534, 1441792, 196665, 65534, 1441792, 327679, 65534, 655360, 262144, 65534, 655360, 262152, 65534, 655360, 262153, 65534, 655360, 262154, 65534, 655360, 262155, 65534, 655360, 262156, 65534, 655360, 262157, 65534, 655360, 262158, 65534, 655360, 262159, 65534, 655360, 262160, 65534, 655360, 262161, 65534, 655360, 262162, 65534, 655360, 262163, 65534, 655360, 262164, 65534, 655360, 262165, 65534, 655360, 262166, 65534, 655360, 262167, 65534, 655360, 262168, 65534, 655360, 262169, 65534, 655360, 262170, 65534, 655360, 262171, 65534, 655360, 262172, 65534, 655360, 262173, 65534, 655360, 262174, 65534, 655360, 262175, 65534, 655360, 262176, 65534, 655360, 262177, 65534, 655360, 262178, 65534, 655360, 262179, 65534, 655360, 262180, 65534, 655360, 262181, 65534, 655360, 262182, 65534, 655360, 262183, 65534, 655360, 262184, 65534, 655360, 262185, 65534, 655360, 262186, 65534, 655360, 262187, 65534, 655360, 262188, 65534, 655360, 262189, 65534, 655360, 262190, 65534, 655360, 262191, 65534, 655360, 262192, 65534, 655360, 262193, 65534, 655360, 262194, 65534, 655360, 262195, 65534, 655360, 262196, 65534, 655360, 262197, 65534, 655360, 262198, 65534, 655360, 262199, 65534, 655360, 262200, 65534, 655360, 262201, 65534, 655360, 262202, 65534, 655360, 589842, 65535, 655360, 655378, 65535, 655360, 720914, 65535, 655360, 720915, 65535, 655361, 720916, 65535, 655361, 720917, 65535, 655361, 786453, 65535, 589825, 786455, 65535, 589825, 524310, 65535, 589825, 458774, 65535, 589825, 393237, 65535, 589825, 327700, 65535, 589825, 589855, 65535, 1048577, 589856, 65535, 1048577, 655395, 65535, 1048577, 655396, 65535, 1048577, 655386, 0, 1048577, 655385, 0, 1048577)
@@ -50,103 +50,103 @@ metadata/_editor_floor_ = Vector3(0, 10, 0)
 
 [node name="SpikeRoof" type="Node" parent="World" unique_id=1191948644]
 
-[node name="Spike" parent="World/SpikeRoof" unique_id=1309075174 instance=ExtResource("2_bk3u3")]
+[node name="Spike" parent="World/SpikeRoof" unique_id=1309075174 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 25, 12, -1)
 
-[node name="Spike2" parent="World/SpikeRoof" unique_id=612487312 instance=ExtResource("2_bk3u3")]
+[node name="Spike2" parent="World/SpikeRoof" unique_id=612487312 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 26, 12, -1)
 
-[node name="Spike3" parent="World/SpikeRoof" unique_id=678748794 instance=ExtResource("2_bk3u3")]
+[node name="Spike3" parent="World/SpikeRoof" unique_id=678748794 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 27, 12, -1)
 
-[node name="Spike4" parent="World/SpikeRoof" unique_id=793926404 instance=ExtResource("2_bk3u3")]
+[node name="Spike4" parent="World/SpikeRoof" unique_id=793926404 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 28, 12, -1)
 
-[node name="Spike5" parent="World/SpikeRoof" unique_id=1547996215 instance=ExtResource("2_bk3u3")]
+[node name="Spike5" parent="World/SpikeRoof" unique_id=1547996215 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 29, 12, -1)
 
-[node name="Spike6" parent="World/SpikeRoof" unique_id=1714102930 instance=ExtResource("2_bk3u3")]
+[node name="Spike6" parent="World/SpikeRoof" unique_id=1714102930 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 30, 12, -1)
 
-[node name="Spike7" parent="World/SpikeRoof" unique_id=530694451 instance=ExtResource("2_bk3u3")]
+[node name="Spike7" parent="World/SpikeRoof" unique_id=530694451 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 31, 12, -1)
 
-[node name="Spike8" parent="World/SpikeRoof" unique_id=1761823545 instance=ExtResource("2_bk3u3")]
+[node name="Spike8" parent="World/SpikeRoof" unique_id=1761823545 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 32, 12, -1)
 
-[node name="Spike9" parent="World/SpikeRoof" unique_id=1369214581 instance=ExtResource("2_bk3u3")]
+[node name="Spike9" parent="World/SpikeRoof" unique_id=1369214581 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 33, 12, -1)
 
-[node name="Spike10" parent="World/SpikeRoof" unique_id=1649796474 instance=ExtResource("2_bk3u3")]
+[node name="Spike10" parent="World/SpikeRoof" unique_id=1649796474 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 34, 12, -1)
 
-[node name="Spike11" parent="World/SpikeRoof" unique_id=564408211 instance=ExtResource("2_bk3u3")]
+[node name="Spike11" parent="World/SpikeRoof" unique_id=564408211 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 35, 12, -1)
 
-[node name="Spike12" parent="World/SpikeRoof" unique_id=1639026182 instance=ExtResource("2_bk3u3")]
+[node name="Spike12" parent="World/SpikeRoof" unique_id=1639026182 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 37, 12, -1)
 
-[node name="Spike14" parent="World/SpikeRoof" unique_id=1526234671 instance=ExtResource("2_bk3u3")]
+[node name="Spike14" parent="World/SpikeRoof" unique_id=1526234671 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 36, 12, -1)
 
-[node name="Spike13" parent="World/SpikeRoof" unique_id=859805282 instance=ExtResource("2_bk3u3")]
+[node name="Spike13" parent="World/SpikeRoof" unique_id=859805282 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 25, 12, -1)
 
 [node name="FirstSpikeTrap" type="Node" parent="World" unique_id=801661128]
 
-[node name="Spike" parent="World/FirstSpikeTrap" unique_id=378217370 instance=ExtResource("2_bk3u3")]
+[node name="Spike" parent="World/FirstSpikeTrap" unique_id=378217370 instance=ExtResource("3_2os1m")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 76, 6, -0.93142754)
 
-[node name="Spike2" parent="World/FirstSpikeTrap" unique_id=1630101780 instance=ExtResource("2_bk3u3")]
+[node name="Spike2" parent="World/FirstSpikeTrap" unique_id=1630101780 instance=ExtResource("3_2os1m")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 75, 6, -0.93142754)
 
-[node name="Spike3" parent="World/FirstSpikeTrap" unique_id=1572514261 instance=ExtResource("2_bk3u3")]
+[node name="Spike3" parent="World/FirstSpikeTrap" unique_id=1572514261 instance=ExtResource("3_2os1m")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 74, 6, -0.93142754)
 
-[node name="Spike4" parent="World/FirstSpikeTrap" unique_id=1548272134 instance=ExtResource("2_bk3u3")]
+[node name="Spike4" parent="World/FirstSpikeTrap" unique_id=1548272134 instance=ExtResource("3_2os1m")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 73, 6, -0.93142754)
 
-[node name="Spike5" parent="World/FirstSpikeTrap" unique_id=221117922 instance=ExtResource("2_bk3u3")]
+[node name="Spike5" parent="World/FirstSpikeTrap" unique_id=221117922 instance=ExtResource("3_2os1m")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 72, 6, -0.93142754)
 
 [node name="SecondSpikeTrap" type="Node" parent="World" unique_id=1085633597]
 
-[node name="Spike" parent="World/SecondSpikeTrap" unique_id=377019202 instance=ExtResource("2_bk3u3")]
+[node name="Spike" parent="World/SecondSpikeTrap" unique_id=377019202 instance=ExtResource("3_2os1m")]
 transform = Transform3D(1, -1.0658141e-14, 0, 1.0658141e-14, 1, 0, 0, 0, 1, 91, 12.5, -0.75)
 
-[node name="Spike2" parent="World/SecondSpikeTrap" unique_id=1697080456 instance=ExtResource("2_bk3u3")]
+[node name="Spike2" parent="World/SecondSpikeTrap" unique_id=1697080456 instance=ExtResource("3_2os1m")]
 transform = Transform3D(1, -1.0658141e-14, 0, 1.0658141e-14, 1, 0, 0, 0, 1, 92, 12.5, -0.75)
 
-[node name="Spike4" parent="World/SecondSpikeTrap" unique_id=1407713373 instance=ExtResource("2_bk3u3")]
+[node name="Spike4" parent="World/SecondSpikeTrap" unique_id=1407713373 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, -8.742276e-08, 0, 8.742276e-08, -1, 0, 0, 0, 1, 91, 17.5, -0.75)
 
-[node name="Spike5" parent="World/SecondSpikeTrap" unique_id=223745636 instance=ExtResource("2_bk3u3")]
+[node name="Spike5" parent="World/SecondSpikeTrap" unique_id=223745636 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, -8.742276e-08, 0, 8.742276e-08, -1, 0, 0, 0, 1, 92, 17.5, -0.75)
 
-[node name="Spike6" parent="World/SecondSpikeTrap" unique_id=1195582467 instance=ExtResource("2_bk3u3")]
+[node name="Spike6" parent="World/SecondSpikeTrap" unique_id=1195582467 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, -8.742276e-08, 0, 8.742276e-08, -1, 0, 0, 0, 1, 93, 17.5, -0.75)
 
-[node name="Spike7" parent="World/SecondSpikeTrap" unique_id=561066781 instance=ExtResource("2_bk3u3")]
+[node name="Spike7" parent="World/SecondSpikeTrap" unique_id=561066781 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, -8.742276e-08, 0, 8.742276e-08, -1, 0, 0, 0, 1, 94, 17.5, -0.75)
 
-[node name="Spike8" parent="World/SecondSpikeTrap" unique_id=1909277654 instance=ExtResource("2_bk3u3")]
+[node name="Spike8" parent="World/SecondSpikeTrap" unique_id=1909277654 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, -8.742276e-08, 0, 8.742276e-08, -1, 0, 0, 0, 1, 95, 17.5, -0.75)
 
-[node name="Spike9" parent="World/SecondSpikeTrap" unique_id=347261764 instance=ExtResource("2_bk3u3")]
+[node name="Spike9" parent="World/SecondSpikeTrap" unique_id=347261764 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, -8.742276e-08, 0, 8.742276e-08, -1, 0, 0, 0, 1, 96, 17.5, -0.75)
 
-[node name="Spike10" parent="World/SecondSpikeTrap" unique_id=1980957189 instance=ExtResource("2_bk3u3")]
+[node name="Spike10" parent="World/SecondSpikeTrap" unique_id=1980957189 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, -8.742276e-08, 0, 8.742276e-08, -1, 0, 0, 0, 1, 97, 17.5, -0.75)
 
-[node name="Spike11" parent="World/SecondSpikeTrap" unique_id=886131393 instance=ExtResource("2_bk3u3")]
+[node name="Spike11" parent="World/SecondSpikeTrap" unique_id=886131393 instance=ExtResource("3_2os1m")]
 transform = Transform3D(1, -1.0658141e-14, 0, 1.0658141e-14, 1, 0, 0, 0, 1, 90, 12.5, -0.75)
 
-[node name="Spike12" parent="World/SecondSpikeTrap" unique_id=1964698942 instance=ExtResource("2_bk3u3")]
+[node name="Spike12" parent="World/SecondSpikeTrap" unique_id=1964698942 instance=ExtResource("3_2os1m")]
 transform = Transform3D(1, -1.0658141e-14, 0, 1.0658141e-14, 1, 0, 0, 0, 1, 89, 12.5, -0.75)
 
 [node name="TheSpikeOfDoom" type="Node" parent="World" unique_id=588178201]
 
-[node name="SpikeOfDoom" parent="World/TheSpikeOfDoom" unique_id=441663972 instance=ExtResource("2_bk3u3")]
+[node name="SpikeOfDoom" parent="World/TheSpikeOfDoom" unique_id=441663972 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 103, 14, -1)
 
 [node name="Area3D" type="Area3D" parent="World/TheSpikeOfDoom" unique_id=1777931783]
@@ -158,75 +158,75 @@ shape = SubResource("BoxShape3D_fgroy")
 
 [node name="FirstMob" type="Node" parent="World" unique_id=1510569169]
 
-[node name="Monster" parent="World/FirstMob" unique_id=646365200 instance=ExtResource("4_x7iho")]
+[node name="Monster" parent="World/FirstMob" unique_id=646365200 instance=ExtResource("4_go7sj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 7, -1)
 
-[node name="Monster2" parent="World/FirstMob" unique_id=1995859783 instance=ExtResource("4_x7iho")]
+[node name="Monster2" parent="World/FirstMob" unique_id=1995859783 instance=ExtResource("4_go7sj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 7, -1)
 
-[node name="Monster3" parent="World/FirstMob" unique_id=1766075641 instance=ExtResource("4_x7iho")]
+[node name="Monster3" parent="World/FirstMob" unique_id=1766075641 instance=ExtResource("4_go7sj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 7, -1)
 
-[node name="Monster4" parent="World/FirstMob" unique_id=909402111 instance=ExtResource("4_x7iho")]
+[node name="Monster4" parent="World/FirstMob" unique_id=909402111 instance=ExtResource("4_go7sj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.72196, 18.16372, -1.0789783)
 
-[node name="Monster5" parent="World/FirstMob" unique_id=1542659729 instance=ExtResource("4_x7iho")]
+[node name="Monster5" parent="World/FirstMob" unique_id=1542659729 instance=ExtResource("4_go7sj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.39727, 18.16372, -1.0789783)
 
 [node name="SpikeRoof2" type="Node" parent="World" unique_id=1137612520]
 
-[node name="Spike" parent="World/SpikeRoof2" unique_id=1584673862 instance=ExtResource("2_bk3u3")]
+[node name="Spike" parent="World/SpikeRoof2" unique_id=1584673862 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 50, 24, -1)
 
-[node name="Spike2" parent="World/SpikeRoof2" unique_id=1609335859 instance=ExtResource("2_bk3u3")]
+[node name="Spike2" parent="World/SpikeRoof2" unique_id=1609335859 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 51, 24, -1)
 
-[node name="Spike3" parent="World/SpikeRoof2" unique_id=1665703765 instance=ExtResource("2_bk3u3")]
+[node name="Spike3" parent="World/SpikeRoof2" unique_id=1665703765 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 52, 24, -1)
 
-[node name="Spike4" parent="World/SpikeRoof2" unique_id=1819046397 instance=ExtResource("2_bk3u3")]
+[node name="Spike4" parent="World/SpikeRoof2" unique_id=1819046397 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 53, 24, -1)
 
-[node name="Spike5" parent="World/SpikeRoof2" unique_id=748785965 instance=ExtResource("2_bk3u3")]
+[node name="Spike5" parent="World/SpikeRoof2" unique_id=748785965 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 54, 24, -1)
 
-[node name="Spike6" parent="World/SpikeRoof2" unique_id=1041435420 instance=ExtResource("2_bk3u3")]
+[node name="Spike6" parent="World/SpikeRoof2" unique_id=1041435420 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 55, 24, -1)
 
-[node name="Spike7" parent="World/SpikeRoof2" unique_id=812684584 instance=ExtResource("2_bk3u3")]
+[node name="Spike7" parent="World/SpikeRoof2" unique_id=812684584 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 56, 24, -1)
 
-[node name="Spike8" parent="World/SpikeRoof2" unique_id=1977411849 instance=ExtResource("2_bk3u3")]
+[node name="Spike8" parent="World/SpikeRoof2" unique_id=1977411849 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 57, 24, -1)
 
-[node name="Spike9" parent="World/SpikeRoof2" unique_id=2090945947 instance=ExtResource("2_bk3u3")]
+[node name="Spike9" parent="World/SpikeRoof2" unique_id=2090945947 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 58, 24, -1)
 
-[node name="Spike10" parent="World/SpikeRoof2" unique_id=397162670 instance=ExtResource("2_bk3u3")]
+[node name="Spike10" parent="World/SpikeRoof2" unique_id=397162670 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 59, 24, -1)
 
-[node name="Spike11" parent="World/SpikeRoof2" unique_id=1631876542 instance=ExtResource("2_bk3u3")]
+[node name="Spike11" parent="World/SpikeRoof2" unique_id=1631876542 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 60, 24, -1)
 
-[node name="Spike12" parent="World/SpikeRoof2" unique_id=1005135899 instance=ExtResource("2_bk3u3")]
+[node name="Spike12" parent="World/SpikeRoof2" unique_id=1005135899 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 62, 24, -1)
 
-[node name="Spike14" parent="World/SpikeRoof2" unique_id=2143137306 instance=ExtResource("2_bk3u3")]
+[node name="Spike14" parent="World/SpikeRoof2" unique_id=2143137306 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 61, 24, -1)
 
-[node name="Spike13" parent="World/SpikeRoof2" unique_id=1648320302 instance=ExtResource("2_bk3u3")]
+[node name="Spike13" parent="World/SpikeRoof2" unique_id=1648320302 instance=ExtResource("3_2os1m")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 50, 24, -1)
 
-[node name="Area3D" type="Area3D" parent="World" unique_id=1951524636]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 16, -1)
+[node name="Area3D" type="Area3D" parent="World" unique_id=630775105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113, 13, -1)
 monitorable = false
+script = ExtResource("5_2y5yt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Area3D" unique_id=1163313182]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.5, -0.25)
-shape = SubResource("BoxShape3D_xpeg2")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Area3D" unique_id=312717816]
+shape = SubResource("BoxShape3D_e3sih")
 
-[node name="Player" parent="." unique_id=336666563 instance=ExtResource("2_qwhf2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -1)
+[node name="Player" parent="." unique_id=336666563 instance=ExtResource("5_7gny6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97390366, 2.976727, -1)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1624505576]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 4, 7)
@@ -238,6 +238,8 @@ light_energy = 3.0
 [node name="Control" type="Control" parent="." unique_id=673890646]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 14.0
+offset_top = 13.0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -245,23 +247,22 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 112.0
 offset_bottom = 67.0
-text = "RESET"
+text = "RETRY"
 
 [node name="ParallaxPlaneCity" type="MeshInstance3D" parent="." unique_id=327480334]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.715378, -21.218666, -21.894316)
 gi_mode = 2
 gi_lightmap_texel_scale = 0.2
-mesh = ExtResource("5_xrid1")
-surface_material_override/0 = ExtResource("6_xs5uq")
+mesh = ExtResource("6_2aecg")
+surface_material_override/0 = ExtResource("7_6dial")
 
 [node name="ParallaxPlaneMountains" type="MeshInstance3D" parent="." unique_id=1763727806]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -45.698265, -21.914139, -43.39828)
 gi_mode = 2
 gi_lightmap_texel_scale = 0.2
-mesh = ExtResource("6_6d1lw")
-surface_material_override/0 = ExtResource("8_xs5uq")
+mesh = ExtResource("8_7nomh")
+surface_material_override/0 = ExtResource("9_1s4pk")
 
 [connection signal="body_entered" from="World/TheSpikeOfDoom/Area3D" to="World/TheSpikeOfDoom/SpikeOfDoom" method="_on_area_3d_body_entered"]
-[connection signal="area_entered" from="World/Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="World/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]

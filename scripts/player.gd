@@ -63,14 +63,9 @@ func change_mask(mask1: bool, mask2: bool):
 	mask_02_combat.visible = mask2
 
 func die():
-<<<<<<< HEAD
-	get_tree().reload_current_scene()
-=======
 	hit.emit()
 	queue_free()
-	get_tree().change_scene_to_file("res://death_screen.tscn")
-
->>>>>>> Polish_2
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 
 func _on_mob_detector_body_entered(_body: Node3D) -> void:
 	die()

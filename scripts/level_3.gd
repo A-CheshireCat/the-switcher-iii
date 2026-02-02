@@ -1,5 +1,4 @@
-extends Node2D
-
+extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,15 +8,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-
-
-func _on_main_menu_button_button_down() -> void:
+func _on_menu_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-
-
-func _on_quit_game_button_button_down() -> void:
-	get_tree().quit()
-
-
+	
 func _on_reset_button_button_down() -> void:
-	get_tree().change_scene_to_file("res://training_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+func _on_quit_button_down() -> void:
+	get_tree().quit()
