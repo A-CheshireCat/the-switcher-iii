@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/Actors/Player_Tex/Player_Chara_Skin.jpg.import
 uid="uid://bnikr8vrw5xjj"
 path="res://.godot/imported/Player_Chara_Skin.jpg-3f233eafbbd5144c8fc0ac3a8238840e.ctex"
+========
+uid="uid://c285yqwbr80xp"
+path="res://.godot/imported/End_Screen.jpg-c6a24f9157a6afb27596e2e97e5f2c5a.ctex"
+>>>>>>>> Polish_2:assets/UI/End_Screen.jpg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/Actors/Player_Tex/Player_Chara_Skin.jpg.import
 source_file="res://assets/Actors/Player_Tex/Player_Chara_Skin.jpg"
 dest_files=["res://.godot/imported/Player_Chara_Skin.jpg-3f233eafbbd5144c8fc0ac3a8238840e.ctex"]
+========
+source_file="res://assets/UI/End_Screen.jpg"
+dest_files=["res://.godot/imported/End_Screen.jpg-c6a24f9157a6afb27596e2e97e5f2c5a.ctex"]
+>>>>>>>> Polish_2:assets/UI/End_Screen.jpg.import
 
 [params]
 

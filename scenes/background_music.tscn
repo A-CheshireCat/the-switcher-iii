@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bqyecdrat5vpi"]
+
+[ext_resource type="AudioStream" uid="uid://cpch3fqjuv4ii" path="res://assets/Audio/Music/Witchers_Trail.mp3" id="1_u6r47"]
+[ext_resource type="AudioStream" uid="uid://d0ow4csjiig5d" path="res://assets/Audio/Music/824676_hardbass.mp3" id="1_vjuvc"]
+[ext_resource type="AudioStream" uid="uid://xa5v8thlp3ty" path="res://assets/Audio/Music/Where_the_Piglet_is_going.mp3" id="2_vjuvc"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ijhdc"]
+stream_count = 3
+stream_0 = ExtResource("1_vjuvc")
+stream_1 = ExtResource("1_u6r47")
+stream_2 = ExtResource("2_vjuvc")
+
+[node name="Background Music" type="Node3D" unique_id=316618846]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=332115291]
+stream = SubResource("AudioStreamPlaylist_ijhdc")
+autoplay = true
+bus = &"Music"

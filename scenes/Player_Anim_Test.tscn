@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cmlw2kj2omc1p" path="res://assets/Actors/Player_Character.fbx" id="1_h744p"]
 [ext_resource type="AnimationLibrary" uid="uid://o60v4lcm0xtw" path="res://assets/Animations/Retargeted/Player_Local.res" id="2_6656o"]
 
+<<<<<<< HEAD
 [node name="Player_Character" instance=ExtResource("1_h744p")]
 
 [node name="Armature" parent="." index="0"]
@@ -38,3 +39,102 @@ libraries = {
 &"Player_Local": ExtResource("2_6656o")
 }
 autoplay = "Player_Local/happy_idle"
+=======
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pkxtq"]
+animation = &"Player_Local/happy_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ulc8"]
+animation = &"Player_Local/jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l2ptx"]
+animation = &"Player_Local/standard_run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6xn57"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x2kl3"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ne4f5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h44qb"]
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vhr3e"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_75m6h"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_22pok"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yd2ac"]
+states/Player_Local_happy_idle/node = SubResource("AnimationNodeAnimation_pkxtq")
+states/Player_Local_happy_idle/position = Vector2(418, 100)
+states/Player_Local_jump/node = SubResource("AnimationNodeAnimation_3ulc8")
+states/Player_Local_jump/position = Vector2(569, 3.8547134)
+states/Player_Local_standard_run/node = SubResource("AnimationNodeAnimation_l2ptx")
+states/Player_Local_standard_run/position = Vector2(715, 100)
+transitions = ["Start", "Player_Local_happy_idle", SubResource("AnimationNodeStateMachineTransition_6xn57"), "Player_Local_happy_idle", "Player_Local_jump", SubResource("AnimationNodeStateMachineTransition_x2kl3"), "Player_Local_jump", "Player_Local_happy_idle", SubResource("AnimationNodeStateMachineTransition_ne4f5"), "Player_Local_happy_idle", "Player_Local_standard_run", SubResource("AnimationNodeStateMachineTransition_h44qb"), "Player_Local_standard_run", "Player_Local_happy_idle", SubResource("AnimationNodeStateMachineTransition_vhr3e"), "Player_Local_standard_run", "Player_Local_jump", SubResource("AnimationNodeStateMachineTransition_75m6h"), "Player_Local_jump", "Player_Local_standard_run", SubResource("AnimationNodeStateMachineTransition_22pok")]
+graph_offset = Vector2(0, -70.14529)
+
+[node name="Player_Character" unique_id=826891210 instance=ExtResource("1_h744p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Skeleton" parent="Armature" parent_id_path=PackedInt32Array(1525382239) index="0" unique_id=34623960]
+bones/0/position = Vector3(0.00035835317, 0.9987081, 0.008961188)
+bones/0/rotation = Quaternion(-0.016372818, -0.0003781551, -0.015702453, 0.9997426)
+bones/1/rotation = Quaternion(0.017372025, -0.016126279, -0.012044283, 0.99964654)
+bones/2/rotation = Quaternion(-0.029281927, -0.0033143566, 0.0013476069, 0.9995649)
+bones/3/rotation = Quaternion(-0.029280122, -0.0032839226, 0.0013412759, 0.999565)
+bones/4/rotation = Quaternion(-0.02059132, -0.0016053867, -0.0049129534, 0.9997747)
+bones/5/rotation = Quaternion(-0.068800494, -0.041357633, -0.10932924, 0.99075896)
+bones/8/rotation = Quaternion(0.57268333, 0.38922656, 0.5887956, -0.41696084)
+bones/9/rotation = Quaternion(0.16314515, 0.868498, -0.40286738, -0.23831218)
+bones/10/rotation = Quaternion(0.06704143, -0.7039215, 0.067041054, 0.7039215)
+bones/11/rotation = Quaternion(0.012433618, 0.7653834, -0.059313193, 0.6407149)
+bones/37/rotation = Quaternion(0.55966395, -0.41437083, -0.5485386, -0.46279418)
+bones/38/rotation = Quaternion(0.028842654, 0.8295197, -0.55702657, -0.028045144)
+bones/39/rotation = Quaternion(0.050976027, 0.7052669, -0.05097611, 0.705267)
+bones/40/rotation = Quaternion(0.0888538, -0.7912442, -0.068672694, 0.6011004)
+bones/66/rotation = Quaternion(0.07112378, 0.046507858, 0.995635, -0.038595423)
+bones/67/rotation = Quaternion(-0.022569017, 0.9872178, -0.15766476, 0.0057981946)
+bones/68/rotation = Quaternion(-0.036852323, 0.6681485, -0.741938, 0.041802704)
+bones/69/rotation = Quaternion(-5.7664944e-05, 0.9991163, 0.04200775, -0.001398225)
+bones/72/rotation = Quaternion(-0.10140258, 0.017220622, 0.9936068, 0.04654561)
+bones/73/rotation = Quaternion(0.018384233, 0.9895128, -0.1321211, -0.055412173)
+bones/74/rotation = Quaternion(0.051166523, 0.704575, -0.7051081, -0.061471477)
+bones/75/rotation = Quaternion(7.7760615e-06, 0.9964513, 0.084171735, 0.00011056404)
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton" index="1" unique_id=1253815460]
+transform = Transform3D(0.95193076, 0.29015192, -0.09818245, -0.24914284, 0.9198823, 0.30289376, 0.17820147, -0.2638724, 0.9479534, 0.031390704, 1.6027222, -0.038551576)
+bone_name = "Head"
+bone_idx = 5
+
+[node name="Mask_01_Movement" parent="Armature/Skeleton/BoneAttachment3D2" index="0" unique_id=877801400 instance=ExtResource("2_pghf4")]
+transform = Transform3D(0.9983246, 0.030521661, 0.049157795, -0.029294744, 0.999246, -0.025483405, -0.049898386, 0.024000382, 0.9984669, -0.052880496, -1.6290785, -0.028936267)
+
+[node name="Mask_02_Combat" parent="Armature/Skeleton/BoneAttachment3D2" index="1" unique_id=395171146 instance=ExtResource("3_pkxtq")]
+transform = Transform3D(0.9947565, -0.10085901, -0.016946793, 0.09705566, 0.98320967, -0.15452936, 0.032247953, 0.15207419, 0.98784304, 0.1714627, -1.6237159, -0.21284094)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=2003884141]
+libraries/Player_Local = ExtResource("2_6656o")
+autoplay = &"Player_Local/happy_idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2" unique_id=986138797]
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3" unique_id=1419993357]
+tree_root = SubResource("AnimationNodeStateMachine_yd2ac")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/jump = false
+parameters/conditions/run = false
+>>>>>>> Polish_2

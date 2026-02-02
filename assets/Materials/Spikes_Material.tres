@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://6f7kcga8t2wd"]
+
+[ext_resource type="Texture2D" uid="uid://dq2mvkf8esel2" path="res://assets/Props/The_Spikes/Spikes_Tex_02.jpg" id="1_5h853"]
+[ext_resource type="Texture2D" uid="uid://didykgfsiqnxe" path="res://assets/Props/The_Spikes/Spikes_Tex_01_n.jpg" id="2_eygq4"]
+[ext_resource type="Texture2D" uid="uid://bvudv1615k61w" path="res://assets/Props/The_Spikes/Spikes_Tex_01.jpg" id="3_h65dc"]
+
+[resource]
+albedo_texture = ExtResource("1_5h853")
+roughness_texture = ExtResource("3_h65dc")
+normal_enabled = true
+normal_texture = ExtResource("2_eygq4")

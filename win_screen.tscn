@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c8vcvml58vbt5"]
+
+[ext_resource type="Script" path="res://win_screen.gd" id="1_l2arl"]
+[ext_resource type="Texture2D" uid="uid://c285yqwbr80xp" path="res://assets/UI/End_Screen.jpg" id="2_wmwda"]
+
+[node name="WinScreen" type="Node2D" unique_id=1199199447]
+script = ExtResource("1_l2arl")
+
+[node name="Control" type="Control" parent="." unique_id=471085882]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=870322644]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 31.975002
+anchor_bottom = 17.975
+offset_right = -0.00012207031
+texture = ExtResource("2_wmwda")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=359756634]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1082.0
+offset_top = 571.0
+offset_right = 1219.0
+offset_bottom = 672.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=311180147]
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="ResetButton" type="Button" parent="VBoxContainer" unique_id=1279203749]
+layout_mode = 2
+text = "PLAY AGAIN"
+
+[node name="QuitGameButton" type="Button" parent="VBoxContainer" unique_id=1021655952]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="button_down" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/ResetButton" to="." method="_on_reset_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_button_down"]

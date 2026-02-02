@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnf6rksp4yjhm"]
+
+[ext_resource type="Texture2D" uid="uid://cwjgrjx5h8uq" path="res://assets/Enviroment/Parallax_Plane_Mountains/Projection_Texture_02.png" id="1_37bf1"]
+[ext_resource type="Texture2D" uid="uid://bsooq15lyquph" path="res://assets/Enviroment/Parallax_Plane_Mountains/Projection_Texture_02_normal.png" id="2_5rwc4"]
+[ext_resource type="Texture2D" uid="uid://dcdmn3mrwgaxt" path="res://assets/Enviroment/Parallax_Plane_City/Projection_Texture_displace.png" id="2_s80k0"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_37bf1")
+roughness_texture_channel = 4
+normal_texture = ExtResource("2_5rwc4")
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("2_s80k0")
+heightmap_flip_texture = true
