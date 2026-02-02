@@ -65,8 +65,7 @@ func change_mask(mask1: bool, mask2: bool):
 func die():
 	hit.emit()
 	queue_free()
-	get_tree().change_scene_to_file("res://death_screen.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 
 func _on_mob_detector_body_entered(_body: Node3D) -> void:
 	die()

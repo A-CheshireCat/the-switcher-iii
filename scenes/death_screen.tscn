@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bkohf6q8xoim0"]
+
+[ext_resource type="Script" uid="uid://nts3jwqu0ou1" path="res://scripts/death_screen.gd" id="1_ex68u"]
+[ext_resource type="Texture2D" uid="uid://bngioxn2yr5lt" path="res://assets/UI/Death_Screen.jpg" id="2_6bi5g"]
+
+[node name="DeathScreen" type="Node2D" unique_id=2147373809]
+script = ExtResource("1_ex68u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=380933366]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=128140958]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_6bi5g")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=423484514]
+offset_left = 450.0
+offset_top = 596.0
+offset_right = 857.0
+offset_bottom = 673.0
+
+[node name="ResetButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=2123462606]
+layout_mode = 2
+text = "RESET"
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1433625375]
+layout_mode = 2
+text = "MAIN MENU"
+
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/ResetButton" to="." method="_on_reset_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/MainMenu" to="." method="_on_main_menu_button_down"]

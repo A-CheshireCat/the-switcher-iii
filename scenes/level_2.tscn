@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bafp8454db4vy"]
 
-[ext_resource type="Script" uid="uid://o85fdb0hvdyg" path="res://training_level.gd" id="1_rse2e"]
+[ext_resource type="Script" uid="uid://dv1ys73wpxtmm" path="res://scripts/level_2.gd" id="1_que50"]
 [ext_resource type="MeshLibrary" uid="uid://cym2o0vwftsfi" path="res://assets/ML_simple.meshlib" id="2_jm7fg"]
 [ext_resource type="PackedScene" uid="uid://das8sjmy7y3a3" path="res://scenes/spike.tscn" id="3_3pflp"]
 [ext_resource type="PackedScene" uid="uid://1gmc0sac64ja" path="res://scenes/monster.tscn" id="5_44p27"]
+[ext_resource type="Script" uid="uid://wm2ppsuntj8w" path="res://scripts/level_changer.gd" id="5_que50"]
 [ext_resource type="PackedScene" uid="uid://bp56kk1b8t65u" path="res://scenes/player.tscn" id="6_enfa2"]
 [ext_resource type="ArrayMesh" uid="uid://m446sdw524w" path="res://assets/Enviroment/Parallax_Plane_City.obj" id="7_xefxx"]
 [ext_resource type="Material" uid="uid://btt4cvhg8s4yo" path="res://assets/Materials/Background_Cityscape.tres" id="8_m52xl"]
@@ -19,12 +20,10 @@ sky_material = SubResource("ProceduralSkyMaterial_qwhf2")
 background_mode = 2
 sky = SubResource("Sky_rwgxs")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1ouyv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hey2k"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rse2e"]
-
-[node name="Second_Level" type="Node" unique_id=700140822]
-script = ExtResource("1_rse2e")
+[node name="level_2" type="Node" unique_id=700140822]
+script = ExtResource("1_que50")
 
 [node name="World" type="Node3D" parent="." unique_id=1905439584]
 
@@ -166,17 +165,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.92853, 18.44317, -1)
 
 [node name="FirstMob5" type="Node" parent="World" unique_id=1887214915]
 
-[node name="Monster2" parent="World/FirstMob5" unique_id=1835403223 instance=ExtResource("5_44p27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.18564, 2.3028522, -1)
+[node name="Area3D" type="Area3D" parent="World" unique_id=962617660]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 73.0369, 1.5778868, -2)
+monitorable = false
+script = ExtResource("5_que50")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="World" unique_id=1296830417]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/RigidBody3D" unique_id=1352124478]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.27829, 4.4467325, -1.8288221)
-shape = SubResource("BoxShape3D_1ouyv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Area3D" unique_id=1234461065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0.5)
+shape = SubResource("BoxShape3D_hey2k")
 
 [node name="Player" parent="." unique_id=336666563 instance=ExtResource("6_enfa2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7760916, 3.0144205, -1)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1624505576]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 4, 7)
@@ -192,10 +191,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="Control" unique_id=1204790419]
-layout_mode = 0
-offset_right = 112.0
-offset_bottom = 67.0
-text = "RESET"
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.8000002
+anchor_bottom = 1.6750001
+offset_left = 20.0
+offset_top = 18.0
+text = "RETRY"
 
 [node name="ParallaxPlaneCity" type="MeshInstance3D" parent="." unique_id=327480334]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -51.06559, -15.366016, -22.802706)
@@ -211,13 +213,5 @@ gi_lightmap_texel_scale = 0.2
 mesh = ExtResource("9_muq2n")
 surface_material_override/0 = ExtResource("10_ndeph")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1931224168]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.364006, 3.950654, -0.37260723)
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=870724323]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-shape = SubResource("BoxShape3D_rse2e")
-
+[connection signal="body_entered" from="World/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

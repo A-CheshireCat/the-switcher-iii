@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c8vcvml58vbt5"]
+
+[ext_resource type="Script" uid="uid://cijusundp1404" path="res://scripts/level_3.gd" id="1_h23n6"]
+[ext_resource type="Texture2D" uid="uid://c285yqwbr80xp" path="res://assets/UI/End_Screen.jpg" id="2_uwxec"]
+
+[node name="level_3" type="Node2D" unique_id=1199199447]
+script = ExtResource("1_h23n6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1258656466]
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=870322644]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_uwxec")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=359756634]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1082.0
+offset_top = 566.0
+offset_right = -47.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=311180147]
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="Reset" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1279203749]
+layout_mode = 2
+text = "PLAY AGAIN"
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1021655952]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Menu" to="." method="_on_menu_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Reset" to="." method="_on_reset_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
